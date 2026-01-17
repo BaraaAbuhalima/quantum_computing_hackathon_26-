@@ -1,0 +1,139 @@
+water_source_id,name,source_type,max_capacity_m3_day,quality_index,operational
+WELL-01,Ein Samia Well 1,well,5200,82.5,TRUE
+WELL-02,Ein Samia Well 2,well,5100,81.9,TRUE
+WELL-03,Ein Samia Well 3,well,4950,80.7,TRUE
+WELL-04,Ein Samia Well 4,well,4800,79.8,TRUE
+WELL-05,Ein Samia Well 5,well,4700,78.9,TRUE
+WELL-06,Ramallah Municipal Well 1,well,4500,77.4,TRUE
+WELL-07,Ramallah Municipal Well 2,well,4400,76.8,TRUE
+WELL-08,Ramallah Municipal Well 3,well,4300,75.9,TRUE
+WELL-09,Al-Bireh Well 1,well,4200,75.1,TRUE
+WELL-10,Al-Bireh Well 2,well,4100,74.3,TRUE
+WELL-11,Atara Well,well,3900,73.6,TRUE
+WELL-12,Bir Zeit Well,well,3800,72.9,TRUE
+WELL-13,Silwad Well,well,3600,71.4,FALSE
+WELL-14,Deir Dibwan Well,well,3500,70.8,TRUE
+WELL-15,Taybeh Well,well,3400,69.9,TRUE
+WELL-16,Sinjil Well,well,3300,68.7,FALSE
+SPR-001,Ein Qinya,spring,420,88.1,TRUE
+SPR-002,Ein Arik,spring,410,87.5,TRUE
+SPR-003,Ein Misbah,spring,405,86.9,TRUE
+SPR-004,Ein Ayoub,spring,398,86.4,TRUE
+SPR-005,Ein Samia Spring 1,spring,390,85.8,TRUE
+SPR-006,Ein Samia Spring 2,spring,385,85.2,TRUE
+SPR-007,Ein Samia Spring 3,spring,380,84.7,TRUE
+SPR-008,Ein Siniya,spring,372,84.1,TRUE
+SPR-009,Ein Jalazone,spring,365,83.6,TRUE
+SPR-010,Ein Abu Zaid,spring,360,83.1,TRUE
+SPR-011,Ein Beituniya,spring,355,82.6,TRUE
+SPR-012,Ein Deir Ammar,spring,350,82,TRUE
+SPR-013,Ein Nabi Saleh,spring,345,81.5,TRUE
+SPR-014,Ein Aboud,spring,340,81,TRUE
+SPR-015,Ein Turmus Ayya,spring,335,80.5,TRUE
+SPR-016,Ein Kobar,spring,330,80,TRUE
+SPR-017,Ein Silwad,spring,325,79.6,TRUE
+SPR-018,Ein Deir Nidham,spring,320,79.1,TRUE
+SPR-019,Ein Burqa,spring,315,78.6,TRUE
+SPR-020,Ein Sinjil,spring,310,78.1,TRUE
+SPR-021,Ein Lubban,spring,305,77.6,TRUE
+SPR-022,Ein Atara,spring,300,77.1,TRUE
+SPR-023,Ein Bir Zeit,spring,295,76.7,TRUE
+SPR-024,Ein Jifna,spring,290,76.2,TRUE
+SPR-025,Ein Abwein,spring,285,75.8,TRUE
+SPR-026,Ein Mazra'a Sharqiya,spring,280,75.3,TRUE
+SPR-027,Ein Mazra'a Qibliya,spring,275,74.9,TRUE
+SPR-028,Ein Deir Ghassaneh,spring,270,74.4,TRUE
+SPR-029,Ein Ras Karkar,spring,265,74,TRUE
+SPR-030,Ein Beit Rima,spring,260,73.6,TRUE
+SPR-031,Ein Kafr Ein,spring,255,73.2,TRUE
+SPR-032,Ein Shuqba,spring,250,72.8,TRUE
+SPR-033,Ein Nil'in,spring,245,72.4,TRUE
+SPR-034,Ein Bil'in,spring,240,72,TRUE
+SPR-035,Ein Budrus,spring,235,71.6,TRUE
+SPR-036,Ein Qibya,spring,230,71.2,TRUE
+SPR-037,Ein Beit Liqya,spring,225,70.8,TRUE
+SPR-038,Ein Kharbatha,spring,220,70.4,TRUE
+SPR-039,Ein Safa,spring,215,70,TRUE
+SPR-040,Ein Deir Qaddis,spring,210,69.6,TRUE
+SPR-041,Ein Beit Ur,spring,205,69.2,TRUE
+SPR-042,Ein Saffa,spring,200,68.8,TRUE
+SPR-043,Ein Ajjul,spring,195,68.4,TRUE
+SPR-044,Ein Arura,spring,190,68,TRUE
+SPR-045,Ein Mazra'a Gharbiya,spring,185,67.6,TRUE
+SPR-046,Ein Abu Shkheidem,spring,180,67.2,TRUE
+SPR-047,Ein Beitillu,spring,175,66.8,TRUE
+SPR-048,Ein Deir Ibzi',spring,170,66.4,TRUE
+SPR-049,Ein Qarawat,spring,165,66,TRUE
+SPR-050,Ein Kafr Malik,spring,160,65.6,TRUE
+SPR-051,Ein Taybeh,spring,155,65.2,TRUE
+SPR-052,Ein Deir Jarir,spring,150,64.8,TRUE
+SPR-053,Ein Mukhmas,spring,145,64.4,TRUE
+SPR-054,Ein Jaba',spring,140,64,TRUE
+SPR-055,Ein Beitin,spring,135,63.6,TRUE
+SPR-056,Ein Dura al-Qari',spring,130,63.2,TRUE
+SPR-057,Ein Ein Yabrud,spring,125,62.8,TRUE
+SPR-058,Ein Silwad East,spring,120,62.4,TRUE
+SPR-059,Ein Deir Dibwan,spring,115,62,TRUE
+SPR-060,Ein Rammun,spring,110,61.6,TRUE
+SPR-061,Ein Taybeh East,spring,105,61.2,TRUE
+SPR-062,Ein Al-Mughayyir,spring,100,60.8,TRUE
+SPR-063,Ein Turmus,spring,95,60.4,TRUE
+SPR-064,Ein Sinjil East,spring,90,60,TRUE
+SPR-065,Ein Lubban East,spring,85,59.6,TRUE
+SPR-066,Ein Abwein East,spring,80,59.2,TRUE
+SPR-067,Ein Burqa East,spring,75,58.8,TRUE
+SPR-068,Ein Jiljilya,spring,70,58.4,TRUE
+SPR-069,Ein Ajjul East,spring,65,58,TRUE
+SPR-070,Ein Ras Karkar East,spring,60,57.6,TRUE
+SPR-071,Ein Kobar East,spring,55,57.2,TRUE
+SPR-072,Ein Aboud East,spring,50,56.8,TRUE
+SPR-073,Ein Nabi Saleh East,spring,45,56.4,TRUE
+SPR-074,Ein Beit Rima East,spring,40,56,TRUE
+SPR-075,Ein Deir Ammar East,spring,35,55.6,TRUE
+SPR-076,Ein Jifna East,spring,30,55.2,TRUE
+SPR-077,Ein Atara East,spring,25,54.8,TRUE
+SPR-078,Ein Bir Zeit East,spring,20,54.4,TRUE
+SPR-079,Ein Silwad South,spring,18,54,TRUE
+SPR-080,Ein Deir Nidham South,spring,15,53.6,TRUE
+SPR-081,Ein Mazra'a Sharqiya East,spring,14,53.2,TRUE
+SPR-082,Ein Abwein South,spring,13,52.8,TRUE
+SPR-083,Ein Burqa South,spring,12,52.4,TRUE
+SPR-084,Ein Sinjil South,spring,11,52,TRUE
+SPR-085,Ein Lubban South,spring,10,51.6,TRUE
+SPR-086,Ein Kafr Ein South,spring,9,51.2,TRUE
+SPR-087,Ein Shuqba South,spring,8,50.8,TRUE
+SPR-088,Ein Nil'in South,spring,7,50.4,TRUE
+SPR-089,Ein Bil'in South,spring,6,50,TRUE
+SPR-090,Ein Budrus South,spring,5,49.6,TRUE
+SPR-091,Ein Qibya South,spring,4.8,49.2,TRUE
+SPR-092,Ein Beit Liqya South,spring,4.6,48.8,TRUE
+SPR-093,Ein Kharbatha South,spring,4.4,48.4,TRUE
+SPR-094,Ein Safa South,spring,4.2,48,TRUE
+SPR-095,Ein Deir Qaddis South,spring,4,47.6,TRUE
+SPR-096,Ein Beit Ur South,spring,3.8,47.2,TRUE
+SPR-097,Ein Saffa South,spring,3.6,46.8,TRUE
+SPR-098,Ein Ajjul South,spring,3.4,46.4,TRUE
+SPR-099,Ein Arura South,spring,3.2,46,TRUE
+SPR-100,Ein Abu Shkheidem South,spring,3,45.6,TRUE
+SPR-101,Ein Beitillu South,spring,2.8,45.2,TRUE
+SPR-102,Ein Deir Ibzi' South,spring,2.6,44.8,TRUE
+SPR-103,Ein Qarawat South,spring,2.4,44.4,TRUE
+SPR-104,Ein Kafr Malik South,spring,2.2,44,TRUE
+SPR-105,Ein Taybeh South,spring,2,43.6,TRUE
+SPR-106,Ein Deir Jarir South,spring,1.9,43.2,TRUE
+SPR-107,Ein Mukhmas South,spring,1.8,42.8,TRUE
+SPR-108,Ein Jaba' South,spring,1.7,42.4,TRUE
+SPR-109,Ein Beitin South,spring,1.6,42,TRUE
+SPR-110,Ein Dura al-Qari' South,spring,1.5,41.6,TRUE
+SPR-111,Ein Ein Yabrud South,spring,1.4,41.2,TRUE
+SPR-112,Ein Silwad Far,spring,1.3,40.8,TRUE
+SPR-113,Ein Deir Dibwan Far,spring,1.2,40.4,TRUE
+SPR-114,Ein Rammun Far,spring,1.1,40,TRUE
+SPR-115,Ein Taybeh Far,spring,1,39.6,TRUE
+SPR-116,Ein Al-Mughayyir Far,spring,0.95,39.2,TRUE
+SPR-117,Ein Turmus Far,spring,0.9,38.8,TRUE
+SPR-118,Ein Sinjil Far,spring,0.85,38.4,TRUE
+SPR-119,Ein Lubban Far,spring,0.8,38,TRUE
+SPR-120,Ein Abwein Far,spring,0.75,37.6,TRUE
+SPR-121,Ein Burqa Far,spring,0.7,37.2,TRUE
+SPR-122,Ein Jiljilya Far,spring,0.65,36.8,TRUE
