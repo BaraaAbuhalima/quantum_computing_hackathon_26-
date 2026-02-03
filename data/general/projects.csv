@@ -1,0 +1,76 @@
+project_id,locality_id,name,project_type,status,budget,start_date,end_date,responsible_agency
+1,1,Ramallah Central Water Main,well,ongoing,450000,2024-05-10,2025-12-30,PWA
+2,1,Ramallah High Street Paving,road,completed,120000,2023-01-15,2023-08-20,MoPWH
+3,1,Al-Quds Road Lighting,electricity upgrade,ongoing,95000,2024-11-01,2025-04-15,MoLG
+4,1,Old City Drainage System,road,planned,75000,2025-06-01,2025-09-01,MoLG
+5,1,Public Library Renovation,public_building,ongoing,200000,2024-02-15,2025-01-20,NGO-UNDP
+6,2,Abu Qashsh Solar Street Lighting,electricity upgrade,planned,65000,2025-04-12,2025-10-30,MoLG
+7,2,Local Water Reservoir 2,well,ongoing,180000,2024-08-01,2025-06-15,PWA
+8,2,School Entrance Sidewalks,road,completed,30000,2023-05-10,2023-07-01,MoLG
+9,2,Community Center Foundation,public_building,ongoing,400000,2024-01-15,2025-05-20,NGO-Local
+10,2,Village Power Grid Upgrade,electricity upgrade,planned,110000,2025-09-01,2026-03-01,MoLG
+11,3,Abu Shukhaydam Primary Well,well,ongoing,220000,2024-03-10,2025-02-15,PWA
+12,3,New Village Clinic Construction,hospital,planned,600000,2025-11-01,2027-01-15,MoH
+13,3,Northern Road Connection,road,ongoing,340000,2024-07-20,2025-08-10,MoPWH
+14,3,Public Park Landscaping,public_building,completed,45000,2023-02-01,2023-06-30,MoLG
+15,3,Grid Extension Sector D,electricity upgrade,ongoing,85000,2024-09-15,2025-01-25,MoLG
+16,4,Abud Roman Site Restoration,public_building,ongoing,55000,2024-03-15,2025-01-10,MoLG
+17,4,Western Access Road Repair,road,planned,130000,2025-05-10,2025-11-15,MoPWH
+18,4,Abud Water Network Phase 2,well,ongoing,280000,2024-08-01,2025-06-15,PWA
+19,4,Primary School Solar Panels,electricity upgrade,completed,40000,2023-06-10,2023-10-15,MoE
+20,4,Main Square Streetscape,road,ongoing,95000,2024-12-01,2025-04-20,MoLG
+21,5,Abwein Agricultural Road,road,ongoing,110000,2024-09-10,2025-03-15,MoLG
+22,5,Village Clinic Upgrade,hospital,planned,250000,2025-08-01,2026-04-10,MoH
+23,5,Central Transformer Upgrade,electricity upgrade,ongoing,75000,2024-11-15,2025-02-28,MoLG
+24,5,Abwein Public Park,public_building,completed,35000,2023-04-01,2023-08-15,NGO-Local
+25,5,Water Storage Tank,well,ongoing,160000,2024-07-20,2025-05-10,PWA
+26,6,Ajjul Well Rehabilitation,well,ongoing,85000,2024-10-10,2025-01-30,PWA
+27,6,Inner Village Paving,road,planned,60000,2025-06-15,2025-09-15,MoLG
+28,6,Ajjul Youth Center,public_building,ongoing,180000,2024-02-15,2025-03-20,NGO-UNDP
+29,6,Power Grid Maintenance,electricity upgrade,completed,30000,2023-01-15,2023-04-15,MoLG
+30,6,Clinic Equipment Supply,hospital,ongoing,120000,2024-08-10,2025-02-15,MoH
+31,7,Arura Water Pipeline,well,ongoing,310000,2024-04-15,2025-08-15,PWA
+32,7,Main Road Retaining Walls,road,planned,140000,2025-10-01,2026-05-15,MoPWH
+33,7,Arura Library Project,public_building,ongoing,95000,2024-12-01,2025-06-30,NGO-Local
+34,7,Electricity Substation 4,electricity upgrade,completed,210000,2022-11-10,2023-12-20,MoLG
+35,7,Arura Health Center Rehab,hospital,ongoing,350000,2024-01-15,2025-04-10,MoH
+36,8,Atara School Renovation,public_building,ongoing,155000,2024-06-10,2025-01-15,MoE
+37,8,Atara-Birzeit Connection,road,planned,550000,2026-02-01,2027-01-15,MoPWH
+38,8,Emergency Generator Install,electricity upgrade,ongoing,45000,2024-11-20,2025-02-15,MoLG
+39,8,Spring Protection Project,well,completed,25000,2023-05-01,2023-08-30,PWA
+40,8,Atara New Reservoir,well,planned,220000,2025-11-15,2026-09-30,PWA
+41,9,Ayn Arik Main Road,road,ongoing,410000,2024-03-20,2025-05-15,MoPWH
+42,9,Heritage Center Upgrade,public_building,planned,80000,2025-09-10,2026-03-15,NGO-UNESCO
+43,9,Ayn Arik Water Pumps,well,ongoing,135000,2024-08-15,2025-04-20,PWA
+44,9,Street Light Expansion,electricity upgrade,completed,35000,2023-02-10,2023-06-30,MoLG
+45,9,Local Clinic Expansion,hospital,ongoing,280000,2024-01-10,2025-02-15,MoH
+46,10,Ayn Kiniya Bridge Repair,road,ongoing,220000,2024-07-15,2025-03-30,MoPWH
+47,10,Park and Green Spaces,public_building,planned,65000,2025-04-01,2025-09-30,MoLG
+48,10,Power Grid Overhaul,electricity upgrade,ongoing,180000,2024-11-01,2025-08-15,MoLG
+49,10,Ayn Kiniya Primary Well,well,completed,310000,2022-10-15,2024-01-15,PWA
+50,10,Community Hall Roof,public_building,ongoing,45000,2024-09-10,2025-01-15,NGO-Local
+51,11,Ayn Siniya Access Road,road,ongoing,145000,2024-05-20,2025-01-15,MoPWH
+52,11,Water Quality Lab,well,planned,190000,2025-12-01,2026-10-30,PWA
+53,11,Ayn Siniya Streetscapes,road,completed,55000,2023-04-10,2023-09-15,MoLG
+54,11,Grid Expansion Area C,electricity upgrade,ongoing,95000,2024-10-01,2025-03-15,MoLG
+55,11,Ayn Siniya Kindergarten,public_building,ongoing,125000,2024-02-10,2025-01-20,MoE
+56,12,Ayn Yabrud Bypass Road,road,ongoing,620000,2024-01-15,2025-08-30,MoPWH
+57,12,Ayn Yabrud Reservoir 3,well,planned,450000,2026-01-10,2027-02-15,PWA
+58,12,Solar Lighting Phase 2,electricity upgrade,ongoing,75000,2024-11-15,2025-04-30,MoLG
+59,12,Ayn Yabrud Boys School,public_building,completed,210000,2022-09-15,2023-11-30,MoE
+60,12,Village Drain System,road,ongoing,110000,2024-08-01,2025-05-15,MoLG
+61,13,Bayt Liqya Main Well,well,ongoing,285000,2024-05-10,2025-06-30,PWA
+62,13,Bayt Liqya Industrial Rd,road,planned,750000,2026-03-01,2027-05-15,MoPWH
+63,13,Bayt Liqya Transformer,electricity upgrade,ongoing,115000,2024-11-01,2025-03-15,MoLG
+64,13,Youth Center Stadium,public_building,completed,340000,2022-10-10,2024-02-15,MoLG
+65,13,Primary Care Clinic 2,hospital,ongoing,420000,2024-02-15,2025-05-10,MoH
+66,14,Bayt Rima Water Network,well,ongoing,540000,2024-04-01,2025-10-30,PWA
+67,14,Bayt Rima Main Paving,road,planned,310000,2025-09-15,2026-06-15,MoPWH
+68,14,Grid Maintenance North,electricity upgrade,ongoing,55000,2024-11-10,2025-02-15,MoLG
+69,14,Bayt Rima Social Hall,public_building,completed,180000,2023-01-15,2024-01-10,NGO-UNDP
+70,14,New Ambulance Station,hospital,ongoing,220000,2024-07-20,2025-03-15,MoH
+71,15,Bayt Sira Access Road,road,ongoing,195000,2024-06-15,2025-02-15,MoPWH
+72,15,Bayt Sira Clinic Rehab,hospital,planned,150000,2025-11-01,2026-07-15,MoH
+73,15,Transformer Upgrade B,electricity upgrade,ongoing,65000,2024-12-01,2025-03-30,MoLG
+74,15,Bayt Sira Public Well,well,completed,280000,2022-11-10,2024-03-15,PWA
+75,15,Village Mosque Renovation,public_building,ongoing,45000,2024-10-15,2025-02-15,NGO-Local

@@ -1,0 +1,68 @@
+id,name,governorate,locality_type,latitude,longitude,area_km2,elevation_m
+1,Ramallah,Ramallah & Al-Bireh,city,31.9038,35.2034,16.0,872
+2,Abu Qashsh,Ramallah & Al-Bireh,village,31.9870,35.1705,4.2,650
+3,Abu Shukheidim,Ramallah & Al-Bireh,village,31.9851,35.1523,3.8,620
+4,'Abud,Ramallah & Al-Bireh,town,31.9562,35.0671,12.5,540
+5,'Abwein,Ramallah & Al-Bireh,town,32.0331,35.2004,9.7,720
+6,'Ajjul,Ramallah & Al-Bireh,village,31.9955,35.1342,3.1,610
+7,'Arura,Ramallah & Al-Bireh,town,32.0212,35.1487,6.4,700
+8,'Atara,Ramallah & Al-Bireh,village,31.9837,35.2179,4.0,780
+9,'Ayn 'Arik,Ramallah & Al-Bireh,village,31.9336,35.1588,5.1,620
+10,'Ayn Kiniya,Ramallah & Al-Bireh,village,31.9154,35.1449,6.3,540
+11,'Ayn Siniya,Ramallah & Al-Bireh,village,31.9432,35.2478,3.6,680
+12,'Ayn Yabrud,Ramallah & Al-Bireh,village,31.9671,35.2664,5.9,720
+13,Bayt Liqya,Ramallah & Al-Bireh,town,31.8731,35.0965,10.4,410
+14,Bayt Rima,Ramallah & Al-Bireh,town,32.0404,35.1321,8.2,710
+15,Bayt Sira,Ramallah & Al-Bireh,village,31.8826,35.1154,4.8,430
+16,Bayt 'Ur al-Fauqa,Ramallah & Al-Bireh,village,31.8929,35.0713,6.1,520
+17,Bayt 'Ur al-Tahta,Ramallah & Al-Bireh,village,31.8815,35.0628,5.4,480
+18,Beitillu,Ramallah & Al-Bireh,village,31.9397,35.0842,4.3,460
+19,Beitin,Ramallah & Al-Bireh,village,31.9446,35.2571,5.7,720
+20,Beituniya,Ramallah & Al-Bireh,town,31.9005,35.1649,11.8,670
+21,Bil'in,Ramallah & Al-Bireh,village,31.9342,35.0652,4.1,470
+22,Bir Zeit,Ramallah & Al-Bireh,town,31.9696,35.2353,7.9,780
+23,al-Bira,Ramallah & Al-Bireh,city,31.9104,35.2251,22.0,850
+24,Budrus,Ramallah & Al-Bireh,town,31.9488,35.0451,6.8,350
+25,Burham,Ramallah & Al-Bireh,village,31.9969,35.2134,3.9,740
+26,Burqa,Ramallah & Al-Bireh,village,31.9633,35.2439,4.5,700
+27,Dayr Abu Mash'al,Ramallah & Al-Bireh,town,31.9977,35.0604,7.6,480
+28,Dayr 'Ammar,Ramallah & Al-Bireh,village,31.9993,35.1248,3.2,620
+29,Dayr Dibwan,Ramallah & Al-Bireh,town,31.9618,35.2834,9.4,760
+30,Dayr Ghassana,Ramallah & Al-Bireh,town,32.0367,35.1082,8.8,690
+31,Dayr Ibzi',Ramallah & Al-Bireh,village,31.9084,35.0997,4.6,430
+32,Dayr Jarir,Ramallah & Al-Bireh,town,31.9694,35.3091,10.2,800
+33,Dayr Nidham,Ramallah & Al-Bireh,village,32.0181,35.1786,3.7,670
+34,Dayr Qaddis,Ramallah & Al-Bireh,village,31.9587,35.0473,3.4,390
+35,Dayr al-Sudan,Ramallah & Al-Bireh,town,32.0295,35.1804,7.3,720
+36,Dura al-Qari',Ramallah & Al-Bireh,village,31.9824,35.2672,4.9,740
+37,Jammala,Ramallah & Al-Bireh,village,31.9948,35.1056,3.1,610
+38,al-Janiya,Ramallah & Al-Bireh,village,31.9331,35.1062,5.2,450
+39,Jibyya,Ramallah & Al-Bireh,village,32.0312,35.0968,4.4,660
+40,Jifna,Ramallah & Al-Bireh,village,31.9613,35.2564,3.8,710
+41,Jiljilyya,Ramallah & Al-Bireh,village,32.0209,35.1532,4.0,690
+42,Kafr 'Ayn,Ramallah & Al-Bireh,village,31.9692,35.1976,3.5,730
+43,Kafr Malik,Ramallah & Al-Bireh,town,31.9881,35.3198,9.6,820
+44,Kafr Ni'ma,Ramallah & Al-Bireh,town,31.9494,35.1172,7.1,520
+45,Kaubar,Ramallah & Al-Bireh,village,31.9846,35.2011,4.3,750
+46,Kh. al-Misbah,Ramallah & Al-Bireh,village,31.9057,35.1314,2.6,460
+47,Kh. Mismar,Ramallah & Al-Bireh,village,31.9183,35.1429,2.9,480
+48,Kharbata,Ramallah & Al-Bireh,village,31.9541,35.0846,4.1,430
+49,Khirbat Abu Falah,Ramallah & Al-Bireh,village,31.9699,35.3452,6.5,840
+50,al-Lubban,Ramallah & Al-Bireh,village,31.9358,35.2579,3.7,710
+51,Mazari' al-Nubani,Ramallah & Al-Bireh,town,32.0409,35.1761,8.9,730
+52,al-Mazra'a al-Qibliya,Ramallah & Al-Bireh,town,31.9475,35.0831,7.8,440
+53,al-Mazra'a al-Sharqiya,Ramallah & Al-Bireh,town,31.9752,35.3046,9.1,780
+54,al-Midya,Ramallah & Al-Bireh,village,31.9364,35.0337,3.3,360
+55,al-Mughaiyir,Ramallah & Al-Bireh,town,32.0158,35.3631,12.4,880
+56,al-Nabi Salih,Ramallah & Al-Bireh,village,31.9986,35.1339,2.7,610
+57,Ni'lin,Ramallah & Al-Bireh,town,31.9369,35.0331,9.5,350
+58,Qarawat Bani Zeid,Ramallah & Al-Bireh,town,32.0417,35.1388,11.0,710
+59,Qibya,Ramallah & Al-Bireh,town,31.9456,35.0417,8.4,380
+60,Rammun,Ramallah & Al-Bireh,town,31.9341,35.2919,9.9,760
+61,Rantis,Ramallah & Al-Bireh,town,31.9564,35.0459,7.2,370
+62,Ras Karkar,Ramallah & Al-Bireh,village,31.9487,35.1413,4.9,600
+63,Saffa,Ramallah & Al-Bireh,town,31.8874,35.0668,8.7,420
+64,Shabtin,Ramallah & Al-Bireh,village,31.9758,35.0714,4.2,460
+65,Shuqba,Ramallah & Al-Bireh,town,31.9449,35.0168,9.3,360
+66,Silwad,Ramallah & Al-Bireh,town,31.9753,35.2707,10.6,740
+67,Sinjil,Ramallah & Al-Bireh,town,32.0337,35.2645,11.5,760

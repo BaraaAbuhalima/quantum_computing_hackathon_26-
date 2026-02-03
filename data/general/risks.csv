@@ -1,0 +1,76 @@
+risk_id,locality_id,risk_type,severity,probability,last_reported,mitigation_plan
+1,1,contamination,low,0.15,2025-01-10,Monthly water quality testing
+2,1,road_block,medium,0.45,2025-01-15,Reroute traffic via bypass 4
+3,1,power_outage,low,0.20,2025-01-12,Regular substation check
+4,1,flood,medium,0.30,2025-01-05,Clean storm drains before Nov
+5,1,shortage,low,0.10,2025-01-16,Monitor central reservoir
+6,2,drought,high,0.65,2025-01-12,3-day water rotation
+7,2,road_block,high,0.80,2025-01-15,Emergency access path activation
+8,2,power_outage,medium,0.40,2025-01-16,Deploy mobile generator to clinic
+9,2,shortage,high,0.75,2025-01-11,Emergency water tank delivery
+10,2,flood,low,0.10,2025-01-05,Routine drain check
+11,3,drought,medium,0.50,2025-01-12,Water usage awareness campaign
+12,3,road_block,low,0.20,2025-01-15,Alternate route signs
+13,3,power_outage,high,0.70,2025-01-14,Primary grid overhaul scheduled
+14,3,shortage,medium,0.55,2025-01-11,Limit irrigation hours
+15,3,flood,medium,0.45,2025-01-07,Retaining wall reinforcement
+16,4,contamination,high,0.60,2025-01-14,Emergency chlorination treatment
+17,4,road_block,high,0.85,2025-01-16,Identify secondary dirt path
+18,4,drought,medium,0.40,2025-01-10,Prioritize agricultural allocation
+19,4,shortage,high,0.70,2025-01-11,Tanker delivery schedule setup
+20,4,power_outage,low,0.15,2025-01-05,Standard line inspection
+21,5,flood,medium,0.55,2025-01-12,Culvert expansion and clearing
+22,5,road_block,medium,0.40,2025-01-15,Check alternate valley route
+23,5,power_outage,high,0.75,2025-01-16,Replacement of main transformer
+24,5,shortage,medium,0.45,2025-01-11,Mandatory water saving rules
+25,5,contamination,low,0.10,2025-01-08,Standard quarterly screening
+26,6,drought,high,0.80,2025-01-12,Emergency pump activation
+27,6,road_block,low,0.20,2025-01-15,Monitor access point A
+28,6,power_outage,medium,0.35,2025-01-14,Battery backup for clinic
+29,6,shortage,high,0.85,2025-01-13,Connect to regional backup line
+30,6,flood,low,0.05,2025-01-02,Pre-winter drain inspection
+31,7,contamination,medium,0.30,2025-01-14,Filter cleaning at well-head
+32,7,road_block,high,0.90,2025-01-16,Emergency medical escort plan
+33,7,power_outage,medium,0.50,2025-01-15,Solar backup for street lights
+34,7,shortage,medium,0.60,2025-01-12,Rotational valve management
+35,7,drought,medium,0.45,2025-01-09,Mulching awareness for farms
+36,8,flood,high,0.70,2025-01-13,Retaining wall sandbags
+37,8,road_block,low,0.25,2025-01-16,Bypass maintenance
+38,8,power_outage,low,0.15,2025-01-14,Grid load balancing
+39,8,shortage,medium,0.50,2025-01-11,Reservoir level monitoring
+40,8,contamination,low,0.05,2025-01-10,Standard lab test
+41,9,drought,medium,0.40,2025-01-12,Well depth monitoring
+42,9,road_block,high,0.80,2025-01-16,Coordinate with MoPWH for detour
+43,9,power_outage,medium,0.45,2025-01-15,Generator fuel reserve check
+44,9,shortage,low,0.20,2025-01-11,Pressure sensor adjustment
+45,9,flood,medium,0.35,2025-01-08,Clear main drainage channel
+46,10,contamination,high,0.65,2025-01-14,UV treatment installation
+47,10,road_block,medium,0.55,2025-01-16,Update navigation system app
+48,10,power_outage,high,0.85,2025-01-15,Full grid replacement start
+49,10,shortage,medium,0.50,2025-01-12,Inter-village water sharing
+50,10,drought,low,0.25,2025-01-09,Xeriscaping promotion
+51,11,flood,medium,0.40,2025-01-13,Sandbag placement in low area
+52,11,road_block,low,0.15,2025-01-16,Local road patrol
+53,11,power_outage,medium,0.30,2025-01-14,Substation maintenance
+54,11,shortage,high,0.80,2025-01-12,Direct supply from PWA trucks
+55,11,contamination,low,0.05,2025-01-10,Annual water survey
+56,12,drought,high,0.75,2025-01-12,Restrict non-essential usage
+57,12,road_block,high,0.95,2025-01-16,Total bypass activation
+58,12,power_outage,medium,0.55,2025-01-15,Voltage regulator installs
+59,12,shortage,high,0.90,2025-01-13,Emergency reservoir use
+60,12,flood,low,0.10,2025-01-07,Routine culvert check
+61,13,contamination,medium,0.45,2025-01-14,Increase chlorine dosage
+62,13,road_block,medium,0.60,2025-01-16,Security checkpoint monitoring
+63,13,power_outage,low,0.20,2025-01-15,Repair frayed line 7
+64,13,shortage,medium,0.55,2025-01-12,Day/Night flow regulation
+65,13,flood,medium,0.30,2025-01-09,Street drain clearing
+66,14,drought,medium,0.50,2025-01-12,Public well hours limit
+67,14,road_block,low,0.10,2025-01-16,Monitor primary access
+68,14,power_outage,high,0.80,2025-01-15,Deploy emergency UPS to clinic
+69,14,shortage,high,0.70,2025-01-13,Alternate side supply schedule
+70,14,contamination,low,0.15,2025-01-08,Filter mesh replacement
+71,15,flood,high,0.65,2025-01-13,Basement pumping service ready
+72,15,road_block,medium,0.45,2025-01-16,Road debris clearing team
+73,15,power_outage,medium,0.35,2025-01-14,Tree trimming near lines
+74,15,shortage,medium,0.50,2025-01-12,Monitor local well levels
+75,15,contamination,low,0.05,2025-01-11,Standard sediment check
