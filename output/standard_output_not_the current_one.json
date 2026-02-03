@@ -1,0 +1,1063 @@
+{
+  "transfers": [
+    {
+      "from_locality_id": 20,
+      "to_locality_id": 31,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 12,
+      "to_locality_id": 41,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 11,
+      "to_locality_id": 41,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 8,
+      "to_locality_id": 35,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 8,
+      "to_locality_id": 65,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 2,
+      "to_locality_id": 45,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 14,
+      "to_locality_id": 29,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 32,
+      "to_locality_id": 21,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 6,
+      "to_locality_id": 27,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 9,
+      "to_locality_id": 43,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 22,
+      "to_locality_id": 67,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 36,
+      "to_locality_id": 5,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 50,
+      "to_locality_id": 59,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 55,
+      "to_locality_id": 34,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 30,
+      "to_locality_id": 28,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 24,
+      "to_locality_id": 48,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 16,
+      "to_locality_id": 40,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 46,
+      "to_locality_id": 64,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 20,
+      "to_locality_id": 7,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 37,
+      "to_locality_id": 66,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 36,
+      "to_locality_id": 26,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 36,
+      "to_locality_id": 42,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 44,
+      "to_locality_id": 62,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 49,
+      "to_locality_id": 57,
+      "flow_m3_day": 0.0,
+      "rationale": "Transfer water between localities to meet demand."
+    }
+  ],
+  "source_allocations": [
+    {
+      "water_source_id": "WELL-01",
+      "to_locality_id": 31,
+      "allocated_m3_day": 3100.5,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-02",
+      "to_locality_id": 61,
+      "allocated_m3_day": 2900.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-03",
+      "to_locality_id": 41,
+      "allocated_m3_day": 2800.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-04",
+      "to_locality_id": 35,
+      "allocated_m3_day": 2300.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-05",
+      "to_locality_id": 65,
+      "allocated_m3_day": 2200.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-06",
+      "to_locality_id": 45,
+      "allocated_m3_day": 2150.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-07",
+      "to_locality_id": 29,
+      "allocated_m3_day": 2000.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-08",
+      "to_locality_id": 21,
+      "allocated_m3_day": 1750.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-09",
+      "to_locality_id": 27,
+      "allocated_m3_day": 1420.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-10",
+      "to_locality_id": 43,
+      "allocated_m3_day": 1400.5,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-11",
+      "to_locality_id": 67,
+      "allocated_m3_day": 1320.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-12",
+      "to_locality_id": 53,
+      "allocated_m3_day": 1080.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-14",
+      "to_locality_id": 7,
+      "allocated_m3_day": 650.7,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-15",
+      "to_locality_id": 5,
+      "allocated_m3_day": 1100.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-14",
+      "to_locality_id": 59,
+      "allocated_m3_day": 1020.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-09",
+      "to_locality_id": 34,
+      "allocated_m3_day": 920.8,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-12",
+      "to_locality_id": 28,
+      "allocated_m3_day": 890.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-10",
+      "to_locality_id": 48,
+      "allocated_m3_day": 860.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-11",
+      "to_locality_id": 40,
+      "allocated_m3_day": 720.2,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-08",
+      "to_locality_id": 64,
+      "allocated_m3_day": 700.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-04",
+      "to_locality_id": 66,
+      "allocated_m3_day": 540.5,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-05",
+      "to_locality_id": 26,
+      "allocated_m3_day": 510.5,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-07",
+      "to_locality_id": 42,
+      "allocated_m3_day": 400.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-06",
+      "to_locality_id": 62,
+      "allocated_m3_day": 390.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
+      "water_source_id": "WELL-15",
+      "to_locality_id": 57,
+      "allocated_m3_day": 330.5,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    }
+  ],
+  "allocations_by_locality": [
+    {
+      "locality_id": 1,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 2,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 3,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 4,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 5,
+      "incoming_from_sources_m3_day": 1100.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1100.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-15",
+          "allocated_m3_day": 1100.0
+        },
+        {
+          "water_source_id": "LOCALITY-36",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 6,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 7,
+      "incoming_from_sources_m3_day": 650.7,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 650.7,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-14",
+          "allocated_m3_day": 650.7
+        },
+        {
+          "water_source_id": "LOCALITY-20",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 8,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 9,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 10,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 11,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 12,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 13,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 14,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 15,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 16,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 17,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 18,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 19,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 20,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 21,
+      "incoming_from_sources_m3_day": 1750.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1750.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-08",
+          "allocated_m3_day": 1750.0
+        },
+        {
+          "water_source_id": "LOCALITY-32",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 22,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 23,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 24,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 25,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 26,
+      "incoming_from_sources_m3_day": 510.5,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 510.5,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-05",
+          "allocated_m3_day": 510.5
+        },
+        {
+          "water_source_id": "LOCALITY-36",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 27,
+      "incoming_from_sources_m3_day": 1420.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1420.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-09",
+          "allocated_m3_day": 1420.0
+        },
+        {
+          "water_source_id": "LOCALITY-6",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 28,
+      "incoming_from_sources_m3_day": 890.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 890.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-12",
+          "allocated_m3_day": 890.0
+        },
+        {
+          "water_source_id": "LOCALITY-30",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 29,
+      "incoming_from_sources_m3_day": 2000.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2000.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-07",
+          "allocated_m3_day": 2000.0
+        },
+        {
+          "water_source_id": "LOCALITY-14",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 30,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 31,
+      "incoming_from_sources_m3_day": 3100.5,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 3100.5,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-01",
+          "allocated_m3_day": 3100.5
+        },
+        {
+          "water_source_id": "LOCALITY-20",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 32,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 33,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 34,
+      "incoming_from_sources_m3_day": 920.8,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 920.8,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-09",
+          "allocated_m3_day": 920.8
+        },
+        {
+          "water_source_id": "LOCALITY-55",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 35,
+      "incoming_from_sources_m3_day": 2300.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2300.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-04",
+          "allocated_m3_day": 2300.0
+        },
+        {
+          "water_source_id": "LOCALITY-8",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 36,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 37,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 38,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 39,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 40,
+      "incoming_from_sources_m3_day": 720.2,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 720.2,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-11",
+          "allocated_m3_day": 720.2
+        },
+        {
+          "water_source_id": "LOCALITY-16",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 41,
+      "incoming_from_sources_m3_day": 2800.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2800.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-03",
+          "allocated_m3_day": 2800.0
+        },
+        {
+          "water_source_id": "LOCALITY-12",
+          "allocated_m3_day": 0.0
+        },
+        {
+          "water_source_id": "LOCALITY-11",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 42,
+      "incoming_from_sources_m3_day": 400.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 400.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-07",
+          "allocated_m3_day": 400.0
+        },
+        {
+          "water_source_id": "LOCALITY-36",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 43,
+      "incoming_from_sources_m3_day": 1400.5,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1400.5,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-10",
+          "allocated_m3_day": 1400.5
+        },
+        {
+          "water_source_id": "LOCALITY-9",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 44,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 45,
+      "incoming_from_sources_m3_day": 2150.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2150.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-06",
+          "allocated_m3_day": 2150.0
+        },
+        {
+          "water_source_id": "LOCALITY-2",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 46,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 47,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 48,
+      "incoming_from_sources_m3_day": 860.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 860.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-10",
+          "allocated_m3_day": 860.0
+        },
+        {
+          "water_source_id": "LOCALITY-24",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 49,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 50,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 51,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 52,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 53,
+      "incoming_from_sources_m3_day": 1080.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1080.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-12",
+          "allocated_m3_day": 1080.0
+        }
+      ]
+    },
+    {
+      "locality_id": 54,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 55,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 56,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 57,
+      "incoming_from_sources_m3_day": 330.5,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 330.5,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-15",
+          "allocated_m3_day": 330.5
+        },
+        {
+          "water_source_id": "LOCALITY-49",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 58,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 59,
+      "incoming_from_sources_m3_day": 1020.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1020.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-14",
+          "allocated_m3_day": 1020.0
+        },
+        {
+          "water_source_id": "LOCALITY-50",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 60,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 61,
+      "incoming_from_sources_m3_day": 2900.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2900.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-02",
+          "allocated_m3_day": 2900.0
+        }
+      ]
+    },
+    {
+      "locality_id": 62,
+      "incoming_from_sources_m3_day": 390.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 390.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-06",
+          "allocated_m3_day": 390.0
+        },
+        {
+          "water_source_id": "LOCALITY-44",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 63,
+      "incoming_from_sources_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 0.0,
+      "sources_breakdown": []
+    },
+    {
+      "locality_id": 64,
+      "incoming_from_sources_m3_day": 700.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 700.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-08",
+          "allocated_m3_day": 700.0
+        },
+        {
+          "water_source_id": "LOCALITY-46",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 65,
+      "incoming_from_sources_m3_day": 2200.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 2200.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-05",
+          "allocated_m3_day": 2200.0
+        },
+        {
+          "water_source_id": "LOCALITY-8",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 66,
+      "incoming_from_sources_m3_day": 540.5,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 540.5,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-04",
+          "allocated_m3_day": 540.5
+        },
+        {
+          "water_source_id": "LOCALITY-37",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    },
+    {
+      "locality_id": 67,
+      "incoming_from_sources_m3_day": 1320.0,
+      "incoming_from_localities_m3_day": 0.0,
+      "outgoing_transfers_m3_day": 0.0,
+      "secured_total_m3_day": 1320.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "WELL-11",
+          "allocated_m3_day": 1320.0
+        },
+        {
+          "water_source_id": "LOCALITY-22",
+          "allocated_m3_day": 0.0
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_unmet_demand_m3_day": 54376.9,
+    "notes": "Offline heuristic plan; allocates sources by deficit and adds locality-to-locality transfers to ensure a minimum baseline for each locality."
+  }
+}
