@@ -1,32 +1,116 @@
 {
   "transfers": [
     {
+      "from_locality_id": 20,
+      "to_locality_id": 31,
+      "flow_m3_day": 3100.5,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 12,
+      "to_locality_id": 41,
+      "flow_m3_day": 2740.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 11,
+      "to_locality_id": 41,
+      "flow_m3_day": 60.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
       "from_locality_id": 8,
-      "to_locality_id": 53,
-      "flow_m3_day": 897.0,
+      "to_locality_id": 35,
+      "flow_m3_day": 2300.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 32,
+      "to_locality_id": 21,
+      "flow_m3_day": 1750.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 14,
+      "to_locality_id": 27,
+      "flow_m3_day": 1420.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 9,
+      "to_locality_id": 43,
+      "flow_m3_day": 1400.5,
       "rationale": "Transfer water between localities to meet demand."
     },
     {
       "from_locality_id": 22,
-      "to_locality_id": 34,
-      "flow_m3_day": 264.12,
+      "to_locality_id": 67,
+      "flow_m3_day": 1320.0,
       "rationale": "Transfer water between localities to meet demand."
     },
     {
-      "from_locality_id": 20,
-      "to_locality_id": 53,
-      "flow_m3_day": 50.0,
-      "rationale": "Additional transfer to increase locality-to-locality flows."
-    },
-    {
-      "from_locality_id": 20,
-      "to_locality_id": 34,
-      "flow_m3_day": 50.0,
-      "rationale": "Additional transfer to increase locality-to-locality flows."
-    },
-    {
       "from_locality_id": 36,
+      "to_locality_id": 5,
+      "flow_m3_day": 1100.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 13,
+      "to_locality_id": 29,
+      "flow_m3_day": 1050.5,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 50,
+      "to_locality_id": 59,
+      "flow_m3_day": 1020.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 30,
+      "to_locality_id": 28,
+      "flow_m3_day": 890.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 24,
+      "to_locality_id": 48,
+      "flow_m3_day": 70.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 16,
+      "to_locality_id": 40,
+      "flow_m3_day": 720.2,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 46,
+      "to_locality_id": 64,
+      "flow_m3_day": 700.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 37,
+      "to_locality_id": 66,
+      "flow_m3_day": 540.5,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 44,
+      "to_locality_id": 62,
+      "flow_m3_day": 390.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 8,
       "to_locality_id": 53,
+      "flow_m3_day": 120.0,
+      "rationale": "Transfer water between localities to meet demand."
+    },
+    {
+      "from_locality_id": 16,
+      "to_locality_id": 31,
       "flow_m3_day": 50.0,
       "rationale": "Additional transfer to increase locality-to-locality flows."
     }
@@ -41,25 +125,13 @@
     {
       "water_source_id": "WELL-07",
       "to_locality_id": 61,
-      "allocated_m3_day": 3920.0,
+      "allocated_m3_day": 2760.0,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
       "water_source_id": "WELL-01",
       "to_locality_id": 65,
-      "allocated_m3_day": 3080.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-033",
-      "to_locality_id": 29,
-      "allocated_m3_day": 245.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "WELL-03",
-      "to_locality_id": 29,
-      "allocated_m3_day": 1744.5,
+      "allocated_m3_day": 2200.0,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
@@ -77,7 +149,7 @@
     {
       "water_source_id": "WELL-02",
       "to_locality_id": 45,
-      "allocated_m3_day": 2310.0,
+      "allocated_m3_day": 1450.0,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
@@ -113,31 +185,7 @@
     {
       "water_source_id": "SPR-053",
       "to_locality_id": 7,
-      "allocated_m3_day": 145.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-060",
-      "to_locality_id": 7,
-      "allocated_m3_day": 110.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-063",
-      "to_locality_id": 7,
-      "allocated_m3_day": 95.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-064",
-      "to_locality_id": 7,
-      "allocated_m3_day": 90.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "WELL-04",
-      "to_locality_id": 7,
-      "allocated_m3_day": 185.98,
+      "allocated_m3_day": 25.7,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
@@ -161,7 +209,7 @@
     {
       "water_source_id": "SPR-046",
       "to_locality_id": 34,
-      "allocated_m3_day": 180.0,
+      "allocated_m3_day": 75.8,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
@@ -177,6 +225,12 @@
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
+      "water_source_id": "SPR-063",
+      "to_locality_id": 26,
+      "allocated_m3_day": 95.0,
+      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
+    },
+    {
       "water_source_id": "SPR-088",
       "to_locality_id": 26,
       "allocated_m3_day": 7.0,
@@ -185,91 +239,73 @@
     {
       "water_source_id": "WELL-05",
       "to_locality_id": 26,
-      "allocated_m3_day": 382.7,
+      "allocated_m3_day": 83.5,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
       "water_source_id": "SPR-001",
       "to_locality_id": 42,
-      "allocated_m3_day": 420.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-032",
-      "to_locality_id": 42,
-      "allocated_m3_day": 140.0,
+      "allocated_m3_day": 400.0,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
       "water_source_id": "SPR-011",
       "to_locality_id": 57,
-      "allocated_m3_day": 355.0,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-012",
-      "to_locality_id": 57,
-      "allocated_m3_day": 167.7,
-      "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
-    },
-    {
-      "water_source_id": "SPR-049",
-      "to_locality_id": 3,
-      "allocated_m3_day": 80.28,
+      "allocated_m3_day": 330.5,
       "rationale": "Greedy allocation from operational sources to reduce high-priority deficits."
     },
     {
       "water_source_id": "WELL-01",
       "to_locality_id": 15,
-      "allocated_m3_day": 1060.0,
+      "allocated_m3_day": 1500.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-01",
       "to_locality_id": 65,
-      "allocated_m3_day": 530.0,
+      "allocated_m3_day": 750.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-02",
       "to_locality_id": 45,
-      "allocated_m3_day": 1395.0,
+      "allocated_m3_day": 1825.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-02",
       "to_locality_id": 2,
-      "allocated_m3_day": 697.5,
+      "allocated_m3_day": 912.5,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-03",
       "to_locality_id": 9,
-      "allocated_m3_day": 1602.75,
+      "allocated_m3_day": 2475.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-03",
       "to_locality_id": 29,
-      "allocated_m3_day": 801.375,
+      "allocated_m3_day": 1237.5,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-04",
       "to_locality_id": 7,
-      "allocated_m3_day": 4614.02,
+      "allocated_m3_day": 4800.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-05",
       "to_locality_id": 7,
-      "allocated_m3_day": 2158.65,
+      "allocated_m3_day": 2308.25,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "WELL-05",
       "to_locality_id": 26,
-      "allocated_m3_day": 1079.325,
+      "allocated_m3_day": 1154.125,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -287,7 +323,7 @@
     {
       "water_source_id": "WELL-07",
       "to_locality_id": 61,
-      "allocated_m3_day": 480.0,
+      "allocated_m3_day": 1640.0,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -366,6 +402,36 @@
       "water_source_id": "WELL-15",
       "to_locality_id": 66,
       "allocated_m3_day": 3400.0,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-001",
+      "to_locality_id": 15,
+      "allocated_m3_day": 4.0,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-001",
+      "to_locality_id": 27,
+      "allocated_m3_day": 3.2,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-001",
+      "to_locality_id": 14,
+      "allocated_m3_day": 2.56,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-001",
+      "to_locality_id": 42,
+      "allocated_m3_day": 2.048,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-001",
+      "to_locality_id": 46,
+      "allocated_m3_day": 1.638,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -489,27 +555,45 @@
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
+      "water_source_id": "SPR-011",
+      "to_locality_id": 41,
+      "allocated_m3_day": 8.167,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-011",
+      "to_locality_id": 37,
+      "allocated_m3_day": 5.444,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-011",
+      "to_locality_id": 57,
+      "allocated_m3_day": 3.63,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
       "water_source_id": "SPR-012",
       "to_locality_id": 11,
-      "allocated_m3_day": 45.575,
+      "allocated_m3_day": 87.5,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-012",
       "to_locality_id": 20,
-      "allocated_m3_day": 34.181,
+      "allocated_m3_day": 65.625,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-012",
       "to_locality_id": 22,
-      "allocated_m3_day": 25.636,
+      "allocated_m3_day": 49.219,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-012",
       "to_locality_id": 57,
-      "allocated_m3_day": 19.227,
+      "allocated_m3_day": 36.914,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -755,25 +839,49 @@
     {
       "water_source_id": "SPR-032",
       "to_locality_id": 31,
-      "allocated_m3_day": 27.5,
+      "allocated_m3_day": 62.5,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-032",
       "to_locality_id": 44,
-      "allocated_m3_day": 20.625,
+      "allocated_m3_day": 46.875,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-032",
       "to_locality_id": 50,
-      "allocated_m3_day": 15.469,
+      "allocated_m3_day": 35.156,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-032",
       "to_locality_id": 42,
-      "allocated_m3_day": 11.602,
+      "allocated_m3_day": 26.367,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-033",
+      "to_locality_id": 29,
+      "allocated_m3_day": 61.25,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-033",
+      "to_locality_id": 55,
+      "allocated_m3_day": 45.938,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-033",
+      "to_locality_id": 36,
+      "allocated_m3_day": 34.453,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-033",
+      "to_locality_id": 6,
+      "allocated_m3_day": 25.84,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -963,6 +1071,30 @@
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
+      "water_source_id": "SPR-046",
+      "to_locality_id": 21,
+      "allocated_m3_day": 26.05,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-046",
+      "to_locality_id": 34,
+      "allocated_m3_day": 19.538,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-046",
+      "to_locality_id": 36,
+      "allocated_m3_day": 14.653,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-046",
+      "to_locality_id": 3,
+      "allocated_m3_day": 10.99,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
       "water_source_id": "SPR-047",
       "to_locality_id": 10,
       "allocated_m3_day": 87.5,
@@ -977,13 +1109,13 @@
     {
       "water_source_id": "SPR-049",
       "to_locality_id": 8,
-      "allocated_m3_day": 42.36,
+      "allocated_m3_day": 82.5,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
       "water_source_id": "SPR-049",
       "to_locality_id": 3,
-      "allocated_m3_day": 21.18,
+      "allocated_m3_day": 41.25,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -1032,6 +1164,24 @@
       "water_source_id": "SPR-052",
       "to_locality_id": 37,
       "allocated_m3_day": 15.82,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-053",
+      "to_locality_id": 7,
+      "allocated_m3_day": 39.767,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-053",
+      "to_locality_id": 55,
+      "allocated_m3_day": 26.511,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-053",
+      "to_locality_id": 8,
+      "allocated_m3_day": 17.674,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -1113,6 +1263,24 @@
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
+      "water_source_id": "SPR-060",
+      "to_locality_id": 7,
+      "allocated_m3_day": 36.667,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-060",
+      "to_locality_id": 36,
+      "allocated_m3_day": 24.444,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-060",
+      "to_locality_id": 40,
+      "allocated_m3_day": 16.296,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
       "water_source_id": "SPR-061",
       "to_locality_id": 31,
       "allocated_m3_day": 26.25,
@@ -1146,6 +1314,42 @@
       "water_source_id": "SPR-062",
       "to_locality_id": 40,
       "allocated_m3_day": 25.0,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 7,
+      "allocated_m3_day": 15.0,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 25,
+      "allocated_m3_day": 12.5,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 28,
+      "allocated_m3_day": 10.417,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 40,
+      "allocated_m3_day": 8.681,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 60,
+      "allocated_m3_day": 7.234,
+      "rationale": "Use full operational source capacity across connected localities."
+    },
+    {
+      "water_source_id": "SPR-064",
+      "to_locality_id": 52,
+      "allocated_m3_day": 6.028,
       "rationale": "Use full operational source capacity across connected localities."
     },
     {
@@ -1529,14 +1733,14 @@
     },
     {
       "locality_id": 2,
-      "incoming_from_sources_m3_day": 1038.518,
+      "incoming_from_sources_m3_day": 1253.518,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1038.518,
+      "secured_total_m3_day": 1253.518,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-02",
-          "allocated_m3_day": 697.5
+          "allocated_m3_day": 912.5
         },
         {
           "water_source_id": "SPR-002",
@@ -1562,18 +1766,22 @@
     },
     {
       "locality_id": 3,
-      "incoming_from_sources_m3_day": 1126.46,
+      "incoming_from_sources_m3_day": 1077.24,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1126.46,
+      "secured_total_m3_day": 1077.24,
       "sources_breakdown": [
-        {
-          "water_source_id": "SPR-049",
-          "allocated_m3_day": 101.46
-        },
         {
           "water_source_id": "WELL-10",
           "allocated_m3_day": 1025.0
+        },
+        {
+          "water_source_id": "SPR-046",
+          "allocated_m3_day": 10.99
+        },
+        {
+          "water_source_id": "SPR-049",
+          "allocated_m3_day": 41.25
         }
       ]
     },
@@ -1605,9 +1813,9 @@
     {
       "locality_id": 5,
       "incoming_from_sources_m3_day": 1332.806,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 1100.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1332.806,
+      "secured_total_m3_day": 2432.806,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-06",
@@ -1628,15 +1836,19 @@
         {
           "water_source_id": "SPR-083",
           "allocated_m3_day": 6.0
+        },
+        {
+          "water_source_id": "LOCALITY-36",
+          "allocated_m3_day": 1100.0
         }
       ]
     },
     {
       "locality_id": 6,
-      "incoming_from_sources_m3_day": 148.906,
+      "incoming_from_sources_m3_day": 174.746,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 148.906,
+      "secured_total_m3_day": 174.746,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-002",
@@ -1645,6 +1857,10 @@
         {
           "water_source_id": "SPR-027",
           "allocated_m3_day": 68.75
+        },
+        {
+          "water_source_id": "SPR-033",
+          "allocated_m3_day": 25.84
         },
         {
           "water_source_id": "SPR-037",
@@ -1662,10 +1878,10 @@
     },
     {
       "locality_id": 7,
-      "incoming_from_sources_m3_day": 8023.65,
+      "incoming_from_sources_m3_day": 7850.384,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 8023.65,
+      "secured_total_m3_day": 7850.384,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-018",
@@ -1677,19 +1893,7 @@
         },
         {
           "water_source_id": "SPR-053",
-          "allocated_m3_day": 145.0
-        },
-        {
-          "water_source_id": "SPR-060",
-          "allocated_m3_day": 110.0
-        },
-        {
-          "water_source_id": "SPR-063",
-          "allocated_m3_day": 95.0
-        },
-        {
-          "water_source_id": "SPR-064",
-          "allocated_m3_day": 90.0
+          "allocated_m3_day": 65.467
         },
         {
           "water_source_id": "WELL-04",
@@ -1697,16 +1901,24 @@
         },
         {
           "water_source_id": "WELL-05",
-          "allocated_m3_day": 2158.65
+          "allocated_m3_day": 2308.25
+        },
+        {
+          "water_source_id": "SPR-060",
+          "allocated_m3_day": 36.667
+        },
+        {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 15.0
         }
       ]
     },
     {
       "locality_id": 8,
-      "incoming_from_sources_m3_day": 161.308,
+      "incoming_from_sources_m3_day": 219.122,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 897.0,
-      "secured_total_m3_day": -735.692,
+      "outgoing_transfers_m3_day": 2420.0,
+      "secured_total_m3_day": -2200.878,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-030",
@@ -1722,20 +1934,24 @@
         },
         {
           "water_source_id": "SPR-049",
-          "allocated_m3_day": 42.36
+          "allocated_m3_day": 82.5
+        },
+        {
+          "water_source_id": "SPR-053",
+          "allocated_m3_day": 17.674
         }
       ]
     },
     {
       "locality_id": 9,
-      "incoming_from_sources_m3_day": 3812.75,
+      "incoming_from_sources_m3_day": 4685.0,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 3812.75,
+      "outgoing_transfers_m3_day": 1400.5,
+      "secured_total_m3_day": 3284.5,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-03",
-          "allocated_m3_day": 1602.75
+          "allocated_m3_day": 2475.0
         },
         {
           "water_source_id": "WELL-08",
@@ -1778,10 +1994,10 @@
     },
     {
       "locality_id": 11,
-      "incoming_from_sources_m3_day": 338.992,
+      "incoming_from_sources_m3_day": 380.917,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 338.992,
+      "outgoing_transfers_m3_day": 60.0,
+      "secured_total_m3_day": 320.917,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-007",
@@ -1793,7 +2009,7 @@
         },
         {
           "water_source_id": "SPR-012",
-          "allocated_m3_day": 45.575
+          "allocated_m3_day": 87.5
         },
         {
           "water_source_id": "SPR-037",
@@ -1813,8 +2029,8 @@
       "locality_id": 12,
       "incoming_from_sources_m3_day": 262.157,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 262.157,
+      "outgoing_transfers_m3_day": 2740.0,
+      "secured_total_m3_day": -2477.843,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-003",
@@ -1846,8 +2062,8 @@
       "locality_id": 13,
       "incoming_from_sources_m3_day": 1968.333,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1968.333,
+      "outgoing_transfers_m3_day": 1050.5,
+      "secured_total_m3_day": 917.833,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-12",
@@ -1861,14 +2077,18 @@
     },
     {
       "locality_id": 14,
-      "incoming_from_sources_m3_day": 1257.688,
+      "incoming_from_sources_m3_day": 1260.248,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1257.688,
+      "outgoing_transfers_m3_day": 1420.0,
+      "secured_total_m3_day": -159.752,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-08",
           "allocated_m3_day": 1075.0
+        },
+        {
+          "water_source_id": "SPR-001",
+          "allocated_m3_day": 2.56
         },
         {
           "water_source_id": "SPR-020",
@@ -1898,14 +2118,18 @@
     },
     {
       "locality_id": 15,
-      "incoming_from_sources_m3_day": 1157.444,
+      "incoming_from_sources_m3_day": 1601.444,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1157.444,
+      "secured_total_m3_day": 1601.444,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-01",
-          "allocated_m3_day": 1060.0
+          "allocated_m3_day": 1500.0
+        },
+        {
+          "water_source_id": "SPR-001",
+          "allocated_m3_day": 4.0
         },
         {
           "water_source_id": "SPR-007",
@@ -1921,8 +2145,8 @@
       "locality_id": 16,
       "incoming_from_sources_m3_day": 1017.335,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1017.335,
+      "outgoing_transfers_m3_day": 770.2,
+      "secured_total_m3_day": 247.135,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-14",
@@ -2039,14 +2263,14 @@
     },
     {
       "locality_id": 20,
-      "incoming_from_sources_m3_day": 279.625,
+      "incoming_from_sources_m3_day": 311.069,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 100.0,
-      "secured_total_m3_day": 179.625,
+      "outgoing_transfers_m3_day": 3100.5,
+      "secured_total_m3_day": -2789.431,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-012",
-          "allocated_m3_day": 34.181
+          "allocated_m3_day": 65.625
         },
         {
           "water_source_id": "SPR-024",
@@ -2072,27 +2296,35 @@
     },
     {
       "locality_id": 21,
-      "incoming_from_sources_m3_day": 1790.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 1816.05,
+      "incoming_from_localities_m3_day": 1750.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1790.0,
+      "secured_total_m3_day": 3566.05,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-14",
           "allocated_m3_day": 1750.0
         },
         {
+          "water_source_id": "SPR-046",
+          "allocated_m3_day": 26.05
+        },
+        {
           "water_source_id": "SPR-066",
           "allocated_m3_day": 40.0
+        },
+        {
+          "water_source_id": "LOCALITY-32",
+          "allocated_m3_day": 1750.0
         }
       ]
     },
     {
       "locality_id": 22,
-      "incoming_from_sources_m3_day": 2091.568,
+      "incoming_from_sources_m3_day": 2115.151,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 264.12,
-      "secured_total_m3_day": 1827.448,
+      "outgoing_transfers_m3_day": 1320.0,
+      "secured_total_m3_day": 795.151,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-09",
@@ -2104,7 +2336,7 @@
         },
         {
           "water_source_id": "SPR-012",
-          "allocated_m3_day": 25.636
+          "allocated_m3_day": 49.219
         },
         {
           "water_source_id": "SPR-031",
@@ -2153,8 +2385,8 @@
       "locality_id": 24,
       "incoming_from_sources_m3_day": 150.528,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 150.528,
+      "outgoing_transfers_m3_day": 70.0,
+      "secured_total_m3_day": 80.528,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-010",
@@ -2172,23 +2404,27 @@
     },
     {
       "locality_id": 25,
-      "incoming_from_sources_m3_day": 172.5,
+      "incoming_from_sources_m3_day": 185.0,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 172.5,
+      "secured_total_m3_day": 185.0,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-013",
           "allocated_m3_day": 172.5
+        },
+        {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 12.5
         }
       ]
     },
     {
       "locality_id": 26,
-      "incoming_from_sources_m3_day": 1794.025,
+      "incoming_from_sources_m3_day": 1664.625,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1794.025,
+      "secured_total_m3_day": 1664.625,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-048",
@@ -2199,22 +2435,30 @@
           "allocated_m3_day": 155.0
         },
         {
+          "water_source_id": "SPR-063",
+          "allocated_m3_day": 95.0
+        },
+        {
           "water_source_id": "SPR-088",
           "allocated_m3_day": 7.0
         },
         {
           "water_source_id": "WELL-05",
-          "allocated_m3_day": 1462.025
+          "allocated_m3_day": 1237.625
         }
       ]
     },
     {
       "locality_id": 27,
-      "incoming_from_sources_m3_day": 48.2,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 51.4,
+      "incoming_from_localities_m3_day": 1420.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 48.2,
+      "secured_total_m3_day": 1471.4,
       "sources_breakdown": [
+        {
+          "water_source_id": "SPR-001",
+          "allocated_m3_day": 3.2
+        },
         {
           "water_source_id": "SPR-066",
           "allocated_m3_day": 20.0
@@ -2230,15 +2474,19 @@
         {
           "water_source_id": "SPR-081",
           "allocated_m3_day": 3.5
+        },
+        {
+          "water_source_id": "LOCALITY-14",
+          "allocated_m3_day": 1420.0
         }
       ]
     },
     {
       "locality_id": 28,
-      "incoming_from_sources_m3_day": 241.141,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 251.558,
+      "incoming_from_localities_m3_day": 890.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 241.141,
+      "secured_total_m3_day": 1141.558,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-004",
@@ -2253,25 +2501,37 @@
           "allocated_m3_day": 31.641
         },
         {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 10.417
+        },
+        {
           "water_source_id": "SPR-077",
           "allocated_m3_day": 25.0
+        },
+        {
+          "water_source_id": "LOCALITY-30",
+          "allocated_m3_day": 890.0
         }
       ]
     },
     {
       "locality_id": 29,
-      "incoming_from_sources_m3_day": 2790.875,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 1298.75,
+      "incoming_from_localities_m3_day": 1050.5,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 2790.875,
+      "secured_total_m3_day": 2349.25,
       "sources_breakdown": [
         {
-          "water_source_id": "SPR-033",
-          "allocated_m3_day": 245.0
+          "water_source_id": "WELL-03",
+          "allocated_m3_day": 1237.5
         },
         {
-          "water_source_id": "WELL-03",
-          "allocated_m3_day": 2545.875
+          "water_source_id": "SPR-033",
+          "allocated_m3_day": 61.25
+        },
+        {
+          "water_source_id": "LOCALITY-13",
+          "allocated_m3_day": 1050.5
         }
       ]
     },
@@ -2279,8 +2539,8 @@
       "locality_id": 30,
       "incoming_from_sources_m3_day": 84.196,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 84.196,
+      "outgoing_transfers_m3_day": 890.0,
+      "secured_total_m3_day": -805.804,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-020",
@@ -2314,14 +2574,14 @@
     },
     {
       "locality_id": 31,
-      "incoming_from_sources_m3_day": 200.968,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 235.968,
+      "incoming_from_localities_m3_day": 3150.5,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 200.968,
+      "secured_total_m3_day": 3386.468,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-032",
-          "allocated_m3_day": 27.5
+          "allocated_m3_day": 62.5
         },
         {
           "water_source_id": "SPR-038",
@@ -2342,6 +2602,14 @@
         {
           "water_source_id": "SPR-073",
           "allocated_m3_day": 5.76
+        },
+        {
+          "water_source_id": "LOCALITY-20",
+          "allocated_m3_day": 3100.5
+        },
+        {
+          "water_source_id": "LOCALITY-16",
+          "allocated_m3_day": 50.0
         }
       ]
     },
@@ -2349,8 +2617,8 @@
       "locality_id": 32,
       "incoming_from_sources_m3_day": 82.16,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 82.16,
+      "outgoing_transfers_m3_day": 1750.0,
+      "secured_total_m3_day": -1667.84,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-016",
@@ -2401,10 +2669,10 @@
     },
     {
       "locality_id": 34,
-      "incoming_from_sources_m3_day": 1025.0,
-      "incoming_from_localities_m3_day": 314.12,
+      "incoming_from_sources_m3_day": 940.338,
+      "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1339.12,
+      "secured_total_m3_day": 940.338,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-019",
@@ -2420,24 +2688,16 @@
         },
         {
           "water_source_id": "SPR-046",
-          "allocated_m3_day": 180.0
-        },
-        {
-          "water_source_id": "LOCALITY-22",
-          "allocated_m3_day": 264.12
-        },
-        {
-          "water_source_id": "LOCALITY-20",
-          "allocated_m3_day": 50.0
+          "allocated_m3_day": 95.338
         }
       ]
     },
     {
       "locality_id": 35,
       "incoming_from_sources_m3_day": 135.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 2300.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 135.0,
+      "secured_total_m3_day": 2435.0,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-017",
@@ -2450,19 +2710,35 @@
         {
           "water_source_id": "SPR-055",
           "allocated_m3_day": 33.75
+        },
+        {
+          "water_source_id": "LOCALITY-8",
+          "allocated_m3_day": 2300.0
         }
       ]
     },
     {
       "locality_id": 36,
-      "incoming_from_sources_m3_day": 70.421,
+      "incoming_from_sources_m3_day": 143.971,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 50.0,
-      "secured_total_m3_day": 20.421,
+      "outgoing_transfers_m3_day": 1100.0,
+      "secured_total_m3_day": -956.029,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-007",
           "allocated_m3_day": 56.296
+        },
+        {
+          "water_source_id": "SPR-033",
+          "allocated_m3_day": 34.453
+        },
+        {
+          "water_source_id": "SPR-046",
+          "allocated_m3_day": 14.653
+        },
+        {
+          "water_source_id": "SPR-060",
+          "allocated_m3_day": 24.444
         },
         {
           "water_source_id": "SPR-076",
@@ -2480,11 +2756,15 @@
     },
     {
       "locality_id": 37,
-      "incoming_from_sources_m3_day": 55.136,
+      "incoming_from_sources_m3_day": 60.58,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 55.136,
+      "outgoing_transfers_m3_day": 540.5,
+      "secured_total_m3_day": -479.92,
       "sources_breakdown": [
+        {
+          "water_source_id": "SPR-011",
+          "allocated_m3_day": 5.444
+        },
         {
           "water_source_id": "SPR-043",
           "allocated_m3_day": 20.566
@@ -2543,27 +2823,39 @@
     },
     {
       "locality_id": 40,
-      "incoming_from_sources_m3_day": 35.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 59.977,
+      "incoming_from_localities_m3_day": 720.2,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 35.0,
+      "secured_total_m3_day": 780.177,
       "sources_breakdown": [
+        {
+          "water_source_id": "SPR-060",
+          "allocated_m3_day": 16.296
+        },
         {
           "water_source_id": "SPR-062",
           "allocated_m3_day": 25.0
         },
         {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 8.681
+        },
+        {
           "water_source_id": "SPR-085",
           "allocated_m3_day": 10.0
+        },
+        {
+          "water_source_id": "LOCALITY-16",
+          "allocated_m3_day": 720.2
         }
       ]
     },
     {
       "locality_id": 41,
-      "incoming_from_sources_m3_day": 3225.801,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_sources_m3_day": 3233.968,
+      "incoming_from_localities_m3_day": 2800.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 3225.801,
+      "secured_total_m3_day": 6033.968,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-10",
@@ -2576,6 +2868,10 @@
         {
           "water_source_id": "SPR-008",
           "allocated_m3_day": 69.75
+        },
+        {
+          "water_source_id": "SPR-011",
+          "allocated_m3_day": 8.167
         },
         {
           "water_source_id": "SPR-038",
@@ -2596,23 +2892,31 @@
         {
           "water_source_id": "SPR-068",
           "allocated_m3_day": 13.125
+        },
+        {
+          "water_source_id": "LOCALITY-12",
+          "allocated_m3_day": 2740.0
+        },
+        {
+          "water_source_id": "LOCALITY-11",
+          "allocated_m3_day": 60.0
         }
       ]
     },
     {
       "locality_id": 42,
-      "incoming_from_sources_m3_day": 607.713,
+      "incoming_from_sources_m3_day": 464.526,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 607.713,
+      "secured_total_m3_day": 464.526,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-001",
-          "allocated_m3_day": 420.0
+          "allocated_m3_day": 402.048
         },
         {
           "water_source_id": "SPR-032",
-          "allocated_m3_day": 151.602
+          "allocated_m3_day": 26.367
         },
         {
           "water_source_id": "SPR-040",
@@ -2627,9 +2931,9 @@
     {
       "locality_id": 43,
       "incoming_from_sources_m3_day": 37.734,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 1400.5,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 37.734,
+      "secured_total_m3_day": 1438.234,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-039",
@@ -2638,15 +2942,19 @@
         {
           "water_source_id": "SPR-074",
           "allocated_m3_day": 7.5
+        },
+        {
+          "water_source_id": "LOCALITY-9",
+          "allocated_m3_day": 1400.5
         }
       ]
     },
     {
       "locality_id": 44,
-      "incoming_from_sources_m3_day": 166.434,
+      "incoming_from_sources_m3_day": 192.684,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 166.434,
+      "outgoing_transfers_m3_day": 390.0,
+      "secured_total_m3_day": -197.316,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-026",
@@ -2654,7 +2962,7 @@
         },
         {
           "water_source_id": "SPR-032",
-          "allocated_m3_day": 20.625
+          "allocated_m3_day": 46.875
         },
         {
           "water_source_id": "SPR-034",
@@ -2672,10 +2980,10 @@
     },
     {
       "locality_id": 45,
-      "incoming_from_sources_m3_day": 4405.0,
+      "incoming_from_sources_m3_day": 3975.0,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 4405.0,
+      "secured_total_m3_day": 3975.0,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-009",
@@ -2687,17 +2995,21 @@
         },
         {
           "water_source_id": "WELL-02",
-          "allocated_m3_day": 3705.0
+          "allocated_m3_day": 3275.0
         }
       ]
     },
     {
       "locality_id": 46,
-      "incoming_from_sources_m3_day": 43.472,
+      "incoming_from_sources_m3_day": 45.11,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 43.472,
+      "outgoing_transfers_m3_day": 700.0,
+      "secured_total_m3_day": -654.89,
       "sources_breakdown": [
+        {
+          "water_source_id": "SPR-001",
+          "allocated_m3_day": 1.638
+        },
         {
           "water_source_id": "SPR-016",
           "allocated_m3_day": 34.805
@@ -2728,9 +3040,9 @@
     {
       "locality_id": 48,
       "incoming_from_sources_m3_day": 115.463,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 70.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 115.463,
+      "secured_total_m3_day": 185.463,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-024",
@@ -2743,6 +3055,10 @@
         {
           "water_source_id": "SPR-059",
           "allocated_m3_day": 28.75
+        },
+        {
+          "water_source_id": "LOCALITY-24",
+          "allocated_m3_day": 70.0
         }
       ]
     },
@@ -2777,10 +3093,10 @@
     },
     {
       "locality_id": 50,
-      "incoming_from_sources_m3_day": 87.214,
+      "incoming_from_sources_m3_day": 106.901,
       "incoming_from_localities_m3_day": 0.0,
-      "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 87.214,
+      "outgoing_transfers_m3_day": 1020.0,
+      "secured_total_m3_day": -913.099,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-026",
@@ -2788,7 +3104,7 @@
         },
         {
           "water_source_id": "SPR-032",
-          "allocated_m3_day": 15.469
+          "allocated_m3_day": 35.156
         },
         {
           "water_source_id": "SPR-041",
@@ -2815,23 +3131,27 @@
     },
     {
       "locality_id": 52,
-      "incoming_from_sources_m3_day": 17.415,
+      "incoming_from_sources_m3_day": 23.443,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 17.415,
+      "secured_total_m3_day": 23.443,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-030",
           "allocated_m3_day": 17.415
+        },
+        {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 6.028
         }
       ]
     },
     {
       "locality_id": 53,
       "incoming_from_sources_m3_day": 855.0,
-      "incoming_from_localities_m3_day": 997.0,
+      "incoming_from_localities_m3_day": 120.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 1852.0,
+      "secured_total_m3_day": 975.0,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-006",
@@ -2847,15 +3167,7 @@
         },
         {
           "water_source_id": "LOCALITY-8",
-          "allocated_m3_day": 897.0
-        },
-        {
-          "water_source_id": "LOCALITY-20",
-          "allocated_m3_day": 50.0
-        },
-        {
-          "water_source_id": "LOCALITY-36",
-          "allocated_m3_day": 50.0
+          "allocated_m3_day": 120.0
         }
       ]
     },
@@ -2869,10 +3181,10 @@
     },
     {
       "locality_id": 55,
-      "incoming_from_sources_m3_day": 214.085,
+      "incoming_from_sources_m3_day": 286.534,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 214.085,
+      "secured_total_m3_day": 286.534,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-002",
@@ -2881,6 +3193,14 @@
         {
           "water_source_id": "SPR-030",
           "allocated_m3_day": 36.111
+        },
+        {
+          "water_source_id": "SPR-033",
+          "allocated_m3_day": 45.938
+        },
+        {
+          "water_source_id": "SPR-053",
+          "allocated_m3_day": 26.511
         },
         {
           "water_source_id": "SPR-061",
@@ -2911,18 +3231,18 @@
     },
     {
       "locality_id": 57,
-      "incoming_from_sources_m3_day": 541.927,
+      "incoming_from_sources_m3_day": 371.044,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 541.927,
+      "secured_total_m3_day": 371.044,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-011",
-          "allocated_m3_day": 355.0
+          "allocated_m3_day": 334.13
         },
         {
           "water_source_id": "SPR-012",
-          "allocated_m3_day": 186.927
+          "allocated_m3_day": 36.914
         }
       ]
     },
@@ -2946,17 +3266,22 @@
     {
       "locality_id": 59,
       "incoming_from_sources_m3_day": 0.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 1020.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 0.0,
-      "sources_breakdown": []
+      "secured_total_m3_day": 1020.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "LOCALITY-50",
+          "allocated_m3_day": 1020.0
+        }
+      ]
     },
     {
       "locality_id": 60,
-      "incoming_from_sources_m3_day": 216.019,
+      "incoming_from_sources_m3_day": 223.253,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 216.019,
+      "secured_total_m3_day": 223.253,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-005",
@@ -2969,6 +3294,10 @@
         {
           "water_source_id": "SPR-057",
           "allocated_m3_day": 18.519
+        },
+        {
+          "water_source_id": "SPR-064",
+          "allocated_m3_day": 7.234
         }
       ]
     },
@@ -2992,9 +3321,9 @@
     {
       "locality_id": 62,
       "incoming_from_sources_m3_day": 64.238,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 390.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 64.238,
+      "secured_total_m3_day": 454.238,
       "sources_breakdown": [
         {
           "water_source_id": "SPR-042",
@@ -3003,6 +3332,10 @@
         {
           "water_source_id": "SPR-055",
           "allocated_m3_day": 14.238
+        },
+        {
+          "water_source_id": "LOCALITY-44",
+          "allocated_m3_day": 390.0
         }
       ]
     },
@@ -3017,44 +3350,58 @@
     {
       "locality_id": 64,
       "incoming_from_sources_m3_day": 0.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 700.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 0.0,
-      "sources_breakdown": []
+      "secured_total_m3_day": 700.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "LOCALITY-46",
+          "allocated_m3_day": 700.0
+        }
+      ]
     },
     {
       "locality_id": 65,
-      "incoming_from_sources_m3_day": 3610.0,
+      "incoming_from_sources_m3_day": 2950.0,
       "incoming_from_localities_m3_day": 0.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 3610.0,
+      "secured_total_m3_day": 2950.0,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-01",
-          "allocated_m3_day": 3610.0
+          "allocated_m3_day": 2950.0
         }
       ]
     },
     {
       "locality_id": 66,
       "incoming_from_sources_m3_day": 3400.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 540.5,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 3400.0,
+      "secured_total_m3_day": 3940.5,
       "sources_breakdown": [
         {
           "water_source_id": "WELL-15",
           "allocated_m3_day": 3400.0
+        },
+        {
+          "water_source_id": "LOCALITY-37",
+          "allocated_m3_day": 540.5
         }
       ]
     },
     {
       "locality_id": 67,
       "incoming_from_sources_m3_day": 0.0,
-      "incoming_from_localities_m3_day": 0.0,
+      "incoming_from_localities_m3_day": 1320.0,
       "outgoing_transfers_m3_day": 0.0,
-      "secured_total_m3_day": 0.0,
-      "sources_breakdown": []
+      "secured_total_m3_day": 1320.0,
+      "sources_breakdown": [
+        {
+          "water_source_id": "LOCALITY-22",
+          "allocated_m3_day": 1320.0
+        }
+      ]
     }
   ],
   "storage_levels": [
@@ -3062,25 +3409,25 @@
       "storage_id": 1,
       "locality_id": 1,
       "before_m3": 3200.5,
-      "after_m3": 3363.272
+      "after_m3": 3926.632
     },
     {
       "storage_id": 2,
       "locality_id": 1,
       "before_m3": 1800.0,
-      "after_m3": 1891.545
+      "after_m3": 2208.385
     },
     {
       "storage_id": 3,
       "locality_id": 2,
       "before_m3": 8500.2,
-      "after_m3": 8395.517
+      "after_m3": 8779.056
     },
     {
       "storage_id": 4,
       "locality_id": 2,
       "before_m3": 3800.0,
-      "after_m3": 3753.201
+      "after_m3": 3924.662
     },
     {
       "storage_id": 5,
@@ -3098,37 +3445,37 @@
       "storage_id": 7,
       "locality_id": 4,
       "before_m3": 4200.7,
-      "after_m3": 2411.156
+      "after_m3": 2971.187
     },
     {
       "storage_id": 8,
       "locality_id": 4,
       "before_m3": 2100.0,
-      "after_m3": 1205.377
+      "after_m3": 1485.346
     },
     {
       "storage_id": 9,
       "locality_id": 5,
       "before_m3": 4100.0,
-      "after_m3": 3959.599
+      "after_m3": 5003.149
     },
     {
       "storage_id": 10,
       "locality_id": 5,
       "before_m3": 1950.5,
-      "after_m3": 1883.707
+      "after_m3": 2380.157
     },
     {
       "storage_id": 11,
       "locality_id": 6,
       "before_m3": 9800.5,
-      "after_m3": 9590.641
+      "after_m3": 9698.471
     },
     {
       "storage_id": 12,
       "locality_id": 6,
       "before_m3": 4200.0,
-      "after_m3": 4110.065
+      "after_m3": 4156.275
     },
     {
       "storage_id": 13,
@@ -3146,37 +3493,37 @@
       "storage_id": 15,
       "locality_id": 8,
       "before_m3": 5500.3,
-      "after_m3": 3974.974
+      "after_m3": 3198.314
     },
     {
       "storage_id": 16,
       "locality_id": 8,
       "before_m3": 2100.0,
-      "after_m3": 1517.634
+      "after_m3": 1221.108
     },
     {
       "storage_id": 17,
       "locality_id": 9,
       "before_m3": 1200.0,
-      "after_m3": 1471.65
+      "after_m3": 1730.7
     },
     {
       "storage_id": 18,
       "locality_id": 9,
       "before_m3": 800.0,
-      "after_m3": 981.1
+      "after_m3": 1153.8
     },
     {
       "storage_id": 19,
       "locality_id": 10,
       "before_m3": 4800.0,
-      "after_m3": 4502.413
+      "after_m3": 4655.54
     },
     {
       "storage_id": 20,
       "locality_id": 10,
       "before_m3": 2100.0,
-      "after_m3": 1969.806
+      "after_m3": 2036.799
     },
     {
       "storage_id": 21,
@@ -3188,37 +3535,37 @@
       "storage_id": 22,
       "locality_id": 12,
       "before_m3": 5200.4,
-      "after_m3": 4888.557
+      "after_m3": 2312.557
     },
     {
       "storage_id": 23,
       "locality_id": 13,
       "before_m3": 3100.0,
-      "after_m3": 2547.633
+      "after_m3": 2217.333
     },
     {
       "storage_id": 24,
       "locality_id": 14,
       "before_m3": 7000.6,
-      "after_m3": 7250.288
+      "after_m3": 6120.848
     },
     {
       "storage_id": 25,
       "locality_id": 15,
       "before_m3": 2000.0,
-      "after_m3": -1042.556
+      "after_m3": 601.444
     },
     {
       "storage_id": 26,
       "locality_id": 16,
       "before_m3": 5100.2,
-      "after_m3": 5221.255
+      "after_m3": 4707.135
     },
     {
       "storage_id": 27,
       "locality_id": 17,
       "before_m3": 3800.0,
-      "after_m3": 3194.489
+      "after_m3": 3390.489
     },
     {
       "storage_id": 28,
@@ -3230,19 +3577,19 @@
       "storage_id": 29,
       "locality_id": 19,
       "before_m3": 6200.8,
-      "after_m3": 5025.504
+      "after_m3": 5445.704
     },
     {
       "storage_id": 30,
       "locality_id": 20,
       "before_m3": 2500.0,
-      "after_m3": 1447.625
+      "after_m3": -1169.431
     },
     {
       "storage_id": 31,
       "locality_id": 21,
       "before_m3": 11000.5,
-      "after_m3": 9010.5
+      "after_m3": 11866.55
     },
     {
       "storage_id": 32,
@@ -3254,19 +3601,19 @@
       "storage_id": 33,
       "locality_id": 23,
       "before_m3": 4800.2,
-      "after_m3": 3039.358
+      "after_m3": 3679.678
     },
     {
       "storage_id": 34,
       "locality_id": 24,
       "before_m3": 7200.0,
-      "after_m3": 6258.528
+      "after_m3": 6500.528
     },
     {
       "storage_id": 35,
       "locality_id": 25,
       "before_m3": 3900.4,
-      "after_m3": 1342.9
+      "after_m3": 2135.4
     },
     {
       "storage_id": 36,
@@ -3278,19 +3625,19 @@
       "storage_id": 37,
       "locality_id": 27,
       "before_m3": 4200.7,
-      "after_m3": 2260.9
+      "after_m3": 4252.1
     },
     {
       "storage_id": 38,
       "locality_id": 28,
       "before_m3": 3100.0,
-      "after_m3": 2095.141
+      "after_m3": 3351.558
     },
     {
       "storage_id": 39,
       "locality_id": 29,
       "before_m3": 1050.5,
-      "after_m3": 201.375
+      "after_m3": 799.75
     },
     {
       "storage_id": 40,
@@ -3302,19 +3649,19 @@
       "storage_id": 41,
       "locality_id": 31,
       "before_m3": 5800.3,
-      "after_m3": 1660.568
+      "after_m3": 6086.268
     },
     {
       "storage_id": 42,
       "locality_id": 32,
       "before_m3": 8200.0,
-      "after_m3": 7666.16
+      "after_m3": 6092.16
     },
     {
       "storage_id": 43,
       "locality_id": 33,
       "before_m3": 4500.1,
-      "after_m3": 2604.413
+      "after_m3": 3304.413
     },
     {
       "storage_id": 44,
@@ -3326,19 +3673,19 @@
       "storage_id": 45,
       "locality_id": 35,
       "before_m3": 5900.4,
-      "after_m3": 2815.4
+      "after_m3": 6035.4
     },
     {
       "storage_id": 46,
       "locality_id": 36,
       "before_m3": 4100.0,
-      "after_m3": 3308.421
+      "after_m3": 2563.971
     },
     {
       "storage_id": 47,
       "locality_id": 37,
       "before_m3": 7200.6,
-      "after_m3": 6597.036
+      "after_m3": 6250.18
     },
     {
       "storage_id": 48,
@@ -3350,19 +3697,19 @@
       "storage_id": 49,
       "locality_id": 39,
       "before_m3": 4900.2,
-      "after_m3": 3336.606
+      "after_m3": 3796.606
     },
     {
       "storage_id": 50,
       "locality_id": 40,
       "before_m3": 3500.0,
-      "after_m3": 2386.72
+      "after_m3": 3459.977
     },
     {
       "storage_id": 51,
       "locality_id": 41,
       "before_m3": 8200.8,
-      "after_m3": 7506.601
+      "after_m3": 11434.768
     },
     {
       "storage_id": 52,
@@ -3374,13 +3721,13 @@
       "storage_id": 53,
       "locality_id": 43,
       "before_m3": 2400.0,
-      "after_m3": 267.034
+      "after_m3": 2287.734
     },
     {
       "storage_id": 54,
       "locality_id": 44,
       "before_m3": 1250.5,
-      "after_m3": 366.934
+      "after_m3": 303.184
     },
     {
       "storage_id": 55,
@@ -3392,19 +3739,19 @@
       "storage_id": 56,
       "locality_id": 46,
       "before_m3": 5100.2,
-      "after_m3": 4400.972
+      "after_m3": 3914.81
     },
     {
       "storage_id": 57,
       "locality_id": 47,
       "before_m3": 7400.0,
-      "after_m3": 7418.0
+      "after_m3": 7970.0
     },
     {
       "storage_id": 58,
       "locality_id": 48,
       "before_m3": 3800.4,
-      "after_m3": 2571.863
+      "after_m3": 3025.863
     },
     {
       "storage_id": 59,
@@ -3416,19 +3763,19 @@
       "storage_id": 60,
       "locality_id": 50,
       "before_m3": 4600.7,
-      "after_m3": 3819.634
+      "after_m3": 3067.401
     },
     {
       "storage_id": 61,
       "locality_id": 51,
       "before_m3": 2900.0,
-      "after_m3": 669.3
+      "after_m3": 1949.5
     },
     {
       "storage_id": 62,
       "locality_id": 52,
       "before_m3": 10200.5,
-      "after_m3": 9629.915
+      "after_m3": 9803.943
     },
     {
       "storage_id": 63,
@@ -3440,19 +3787,19 @@
       "storage_id": 64,
       "locality_id": 54,
       "before_m3": 6100.3,
-      "after_m3": 4923.18
+      "after_m3": 5259.5
     },
     {
       "storage_id": 65,
       "locality_id": 55,
       "before_m3": 8500.0,
-      "after_m3": 5284.085
+      "after_m3": 6336.534
     },
     {
       "storage_id": 66,
       "locality_id": 56,
       "before_m3": 4100.1,
-      "after_m3": 3406.1
+      "after_m3": 3630.1
     },
     {
       "storage_id": 67,
@@ -3464,19 +3811,19 @@
       "storage_id": 68,
       "locality_id": 58,
       "before_m3": 5700.4,
-      "after_m3": 2925.4
+      "after_m3": 3765.4
     },
     {
       "storage_id": 69,
       "locality_id": 59,
       "before_m3": 3900.0,
-      "after_m3": 2472.0
+      "after_m3": 3900.0
     },
     {
       "storage_id": 70,
       "locality_id": 60,
       "before_m3": 7500.6,
-      "after_m3": 6596.339
+      "after_m3": 6923.653
     },
     {
       "storage_id": 71,
@@ -3488,19 +3835,19 @@
       "storage_id": 72,
       "locality_id": 62,
       "before_m3": 5000.2,
-      "after_m3": 4518.438
+      "after_m3": 5064.438
     },
     {
       "storage_id": 73,
       "locality_id": 63,
       "before_m3": 3200.0,
-      "after_m3": 1127.3
+      "after_m3": 1719.5
     },
     {
       "storage_id": 74,
       "locality_id": 64,
       "before_m3": 8600.8,
-      "after_m3": 7620.8
+      "after_m3": 8600.8
     },
     {
       "storage_id": 75,
@@ -3512,17 +3859,17 @@
       "storage_id": 76,
       "locality_id": 66,
       "before_m3": 2700.0,
-      "after_m3": 5343.3
+      "after_m3": 6100.0
     },
     {
       "storage_id": 77,
       "locality_id": 67,
       "before_m3": 13000.5,
-      "after_m3": 11152.5
+      "after_m3": 13000.5
     }
   ],
   "summary": {
-    "total_unmet_demand_m3_day": 74046.83,
+    "total_unmet_demand_m3_day": 50243.267,
     "notes": "Offline heuristic plan; allocates sources by deficit and adds locality-to-locality transfers to ensure a minimum baseline for each locality."
   }
 }

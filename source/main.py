@@ -11,11 +11,11 @@ import pandas as pd
 from app.config import DataPaths, OpenAIConfig
 from app.data_loader import load_all, aggregate_per_locality
 from app.prompt_builder import build_prompt
-from app.ai_client import AIClient
 from app.offline_planner import propose_distribution as offline_propose
+from app.quantum_planner import propose_distribution as quantum_propose
 """
-Main CLI for generating a water distribution plan via OpenAI API.
-Offline planner support removed to simplify the app to API-only.
+Main CLI for generating a water distribution plan via OpenAI API
+or local planners (offline/quantum).
 """
 
 
@@ -79,9 +79,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--planner",
         type=str,
-        choices=["offline", "ai"],
+        choices=["offline", "quantum", "ai"],
         default="ai",
-        help="Choose the planner to use: 'offline' for the heuristic planner, 'ai' for the AI model prompt (DeepSeek/OpenAI).",
+        help="Choose the planner to use: 'offline' for the heuristic planner, 'quantum' for QAOA planner, 'ai' for the AI model prompt (DeepSeek/OpenAI).",
     )
     return parser.parse_args()
 
@@ -111,10 +111,13 @@ def main():
         object.__setattr__(cfg, "temperature", float(args.temperature))
     if args.max_tokens is not None:
         object.__setattr__(cfg, "max_tokens", int(args.max_tokens))
-    client = AIClient(cfg)
-    if args.planner == "offline":
-        print("Using offline heuristic planner.")
-        plan = offline_propose(localities_df.copy(), dfs)
+    if args.planner in {"offline", "quantum"}:
+        if args.planner == "offline":
+            print("Using offline heuristic planner.")
+            plan = offline_propose(localities_df.copy(), dfs)
+        else:
+            print("Using quantum QAOA planner.")
+            plan = quantum_propose(localities_df.copy(), dfs)
         # Adapt offline output to expected schema
         src_allocs = plan.get("source_allocations") or []
         transfers_off = plan.get("transfers") or []
@@ -152,7 +155,8 @@ def main():
                 loc_int = int(loc_id)
                 incoming_sources = float(incoming_sources_by_loc.get(loc_int, 0.0))
                 incoming_localities = float(incoming_by_loc.get(loc_int, 0.0))
-                incoming_total = incoming_sources + incoming_localities
+                actual_supply = float(row.get("actual_supply_m3_day", 0) or 0)
+                incoming_total = incoming_sources + incoming_localities + actual_supply
                 outgoing_total = float(outgoing_by_loc.get(loc_int, 0.0))
 
                 if outgoing_total <= 0 or outgoing_total <= incoming_total:
@@ -217,14 +221,46 @@ def main():
                 "sources_breakdown": sources_breakdown,
             })
 
+        storage_levels = []
+        storage_df = dfs.get("water_storage")
+        if storage_df is not None and not storage_df.empty:
+            storage_df = storage_df.copy()
+            storage_df["locality_id"] = storage_df["locality_id"].astype(int)
+            storage_df["current_level_m3"] = pd.to_numeric(storage_df["current_level_m3"], errors="coerce").fillna(0)
+            total_current_by_loc = storage_df.groupby("locality_id")["current_level_m3"].sum().to_dict()
+            secured_by_loc = {}
+            for item in allocations_by_locality:
+                loc = item.get("locality_id")
+                if loc is None:
+                    continue
+                secured_by_loc[int(loc)] = float(item.get("secured_total_m3_day", 0) or 0)
+            for _, row in storage_df.iterrows():
+                locality_id = int(row.get("locality_id"))
+                storage_id = row.get("storage_id")
+                before_m3 = float(row.get("current_level_m3", 0) or 0)
+                loc_total = float(total_current_by_loc.get(locality_id, 0) or 0)
+                demand = float(localities_df.loc[locality_id, "estimated_demand_m3_day"] or 0)
+                secured = float(secured_by_loc.get(locality_id, 0) or 0)
+                loc_after_total = loc_total + secured - demand
+                share = (before_m3 / loc_total) if loc_total > 0 else 0.0
+                after_m3 = loc_after_total * share if loc_total > 0 else 0.0
+                storage_levels.append({
+                    "storage_id": int(storage_id) if storage_id is not None else None,
+                    "locality_id": locality_id,
+                    "before_m3": float(round(before_m3, 3)),
+                    "after_m3": float(round(after_m3, 3)),
+                })
+
         plan = {
             "transfers": transfers,
             "source_allocations": src_allocs,
             "allocations_by_locality": allocations_by_locality,
+            "storage_levels": storage_levels,
             "summary": plan.get("summary") or {},
         }
     else:
         print("Using AI model prompt (DeepSeek/OpenAI).")
+        from app.ai_client import AIClient
         client = AIClient(cfg)
         try:
             plan = client.propose_distribution(

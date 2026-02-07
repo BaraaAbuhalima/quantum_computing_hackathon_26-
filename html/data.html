@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Water Data Explorer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #eef2ff;
+        --card: rgba(255, 255, 255, 0.88);
+        --text: #0b1020;
+        --muted: #5b6780;
+        --accent: #7c3aed;
+        --accent-2: #14b8a6;
+        --danger: #ef4444;
+        --border: rgba(99, 102, 241, 0.15);
+      }
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0a0f1f;
+        --card: rgba(15, 23, 42, 0.9);
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #a78bfa;
+        --accent-2: #2dd4bf;
+        --danger: #f87171;
+        --border: rgba(148, 163, 184, 0.2);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Tahoma, Arial, sans-serif;
+        background:
+          radial-gradient(circle at 10% 20%, #e0e7ff 0, transparent 35%),
+          radial-gradient(circle at 90% 10%, #f0f9ff 0, transparent 40%),
+          var(--bg);
+        color: var(--text);
+      }
+      header {
+        padding: 20px 24px;
+        background: linear-gradient(120deg, #7c3aed, #2563eb);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        backdrop-filter: blur(12px);
+      }
+      header h1 {
+        margin: 0 0 6px;
+        font-size: 24px;
+      }
+      header p {
+        margin: 0 0 12px;
+        opacity: 0.9;
+      }
+      header .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      header a,
+      header button {
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(10px);
+      }
+      label {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 6px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+      }
+      .dataset-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-height: 420px;
+        overflow: auto;
+      }
+      .dataset-item {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+      }
+      .dataset-item.active {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .stat strong {
+        font-size: 18px;
+      }
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .table th,
+      .table td {
+        padding: 8px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        font-size: 13px;
+      }
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .pagination button {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .charts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      canvas {
+        width: 100%;
+        height: 260px;
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+      }
+      .tooltip {
+        position: fixed;
+        pointer-events: none;
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 8px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.15s ease,
+          transform 0.15s ease;
+        z-index: 50;
+      }
+      .tooltip.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pill {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+      }
+      @media (max-width: 1100px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .controls {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .charts {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Water Data Explorer</h1>
+      <p>Explore all CSV datasets with filters, charts, and exports.</p>
+      <div class="actions">
+        <a href="index.html">Storage Dashboard</a>
+        <button id="toggleTheme">Toggle theme</button>
+        <button id="exportCsv">Export CSV</button>
+        <button id="exportJson">Export JSON</button>
+      </div>
+    </header>
+    <main>
+      <div class="layout">
+        <section class="card">
+          <label for="datasetSelect">Choose dataset</label>
+          <select id="datasetSelect">
+            <option value="0">Water Demand</option>
+            <option value="1">Water Supply</option>
+            <option value="2">Water Storage</option>
+            <option value="3">Water Interruptions</option>
+            <option value="4">Locality Connections</option>
+            <option value="5">Source-Locality Connections</option>
+            <option value="6">Water Sources</option>
+            <option value="7">General - Population</option>
+            <option value="8">General - Employment Gender Youth</option>
+            <option value="9">General - Education Distribution</option>
+            <option value="10">General - Localities</option>
+            <option value="11">General - Locality Labor Force</option>
+            <option value="12">General - Profession Stats</option>
+            <option value="13">General - Projects</option>
+            <option value="14">General - Risks</option>
+            <option value="15">General - Roads Between Localities</option>
+          </select>
+        </section>
+        <section class="card">
+          <div class="stats">
+            <div class="stat">
+              <span class="muted">Rows</span>
+              <strong id="statRows">0</strong>
+            </div>
+            <div class="stat">
+              <span class="muted">Columns</span>
+              <strong id="statCols">0</strong>
+            </div>
+            <div class="stat">
+              <span class="muted">Numeric Columns</span>
+              <strong id="statNumeric">0</strong>
+            </div>
+            <div class="stat">
+              <span class="muted">Missing Cells</span>
+              <strong id="statMissing">0</strong>
+            </div>
+          </div>
+
+          <div class="controls">
+            <div>
+              <label for="search">Search rows</label>
+              <input id="search" placeholder="text" />
+            </div>
+            <div>
+              <label for="filterColumn">Filter column</label>
+              <select id="filterColumn"></select>
+            </div>
+            <div>
+              <label for="filterValue">Filter value</label>
+              <input id="filterValue" placeholder="contains" />
+            </div>
+            <div>
+              <label for="sortBy">Sort by</label>
+              <select id="sortBy"></select>
+            </div>
+            <div>
+              <label for="order">Order</label>
+              <select id="order">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
+            </div>
+            <div>
+              <label for="pageSize">Page size</label>
+              <select id="pageSize">
+                <option value="20">20</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+              </select>
+            </div>
+            <div>
+              <label for="numericColumn">Numeric column</label>
+              <select id="numericColumn"></select>
+            </div>
+            <div>
+              <label for="groupBy">Group by (bar chart)</label>
+              <select id="groupBy"></select>
+            </div>
+            <div>
+              <label>Chart options</label>
+              <div class="pill">
+                <span>Bins</span>
+                <input id="bins" type="range" min="5" max="30" value="12" />
+              </div>
+            </div>
+            <div>
+              <label>Top N</label>
+              <input id="topN" type="number" value="10" min="3" max="50" />
+            </div>
+          </div>
+
+          <div class="charts">
+            <canvas id="histChart" width="520" height="260"></canvas>
+            <canvas id="barChart" width="520" height="260"></canvas>
+          </div>
+
+          <table class="table" id="dataTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+          <div class="pagination">
+            <div class="pill">
+              Page <span id="pageIndex">1</span> / <span id="pageTotal">1</span>
+            </div>
+            <div style="display: flex; gap: 6px">
+              <button id="prevPage">Prev</button>
+              <button id="nextPage">Next</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="tooltip" id="chartTooltip"></div>
+
+    <script>
+      const datasets = [
+        { label: "Water Demand", path: "../data/water_data/water_demand.csv" },
+        {
+          label: "Water Supply",
+          path: "../data/water_data/water_supply_per_locality.csv",
+        },
+        {
+          label: "Water Storage",
+          path: "../data/water_data/water_storage.csv",
+        },
+        {
+          label: "Water Interruptions",
+          path: "../data/water_data/water_interruptions.csv",
+        },
+        {
+          label: "Locality Connections",
+          path: "../data/water_data/locality-to-locality_water_connection.csv",
+        },
+        {
+          label: "Source-Locality Connections",
+          path: "../data/water_data/water_source_locallity_connection.csv",
+        },
+        {
+          label: "Water Sources",
+          path: "../data/water_data/water_sources.csv",
+        },
+        {
+          label: "General - Population",
+          path: "../data/general/population.csv",
+        },
+        {
+          label: "General - Employment Gender Youth",
+          path: "../data/general/employment_gender_youth.csv",
+        },
+        {
+          label: "General - Education Distribution",
+          path: "../data/general/education_distribution.csv",
+        },
+        {
+          label: "General - Localities",
+          path: "../data/general/localities.csv",
+        },
+        {
+          label: "General - Locality Labor Force",
+          path: "../data/general/locality_labor_force.csv",
+        },
+        {
+          label: "General - Profession Stats",
+          path: "../data/general/profession_stats.csv",
+        },
+        { label: "General - Projects", path: "../data/general/projects.csv" },
+        { label: "General - Risks", path: "../data/general/risks.csv" },
+        {
+          label: "General - Roads Between Localities",
+          path: "../data/general/roads_between_localities.csv",
+        },
+      ];
+
+      const datasetSelect = document.getElementById("datasetSelect");
+      const searchEl = document.getElementById("search");
+      const filterColumnEl = document.getElementById("filterColumn");
+      const filterValueEl = document.getElementById("filterValue");
+      const sortByEl = document.getElementById("sortBy");
+      const orderEl = document.getElementById("order");
+      const pageSizeEl = document.getElementById("pageSize");
+      const numericColumnEl = document.getElementById("numericColumn");
+      const groupByEl = document.getElementById("groupBy");
+      const binsEl = document.getElementById("bins");
+      const topNEl = document.getElementById("topN");
+      const dataTableHead = document.querySelector("#dataTable thead");
+      const dataTableBody = document.querySelector("#dataTable tbody");
+      const pageIndexEl = document.getElementById("pageIndex");
+      const pageTotalEl = document.getElementById("pageTotal");
+      const histChart = document.getElementById("histChart");
+      const barChart = document.getElementById("barChart");
+      const statRows = document.getElementById("statRows");
+      const statCols = document.getElementById("statCols");
+      const statNumeric = document.getElementById("statNumeric");
+      const statMissing = document.getElementById("statMissing");
+      const toggleTheme = document.getElementById("toggleTheme");
+      const exportCsv = document.getElementById("exportCsv");
+      const exportJson = document.getElementById("exportJson");
+      const prevPage = document.getElementById("prevPage");
+      const nextPage = document.getElementById("nextPage");
+      const chartTooltip = document.getElementById("chartTooltip");
+
+      let activeDataset = datasets[0];
+      let rows = [];
+      let columns = [];
+      let filtered = [];
+      let page = 1;
+      let histMeta = null;
+      let barMeta = null;
+
+      const fmt = (n) =>
+        Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+
+      function parseCsv(text) {
+        const lines = text.trim().split(/\r?\n/);
+        const headers = lines[0].split(",");
+        const result = [];
+        for (let i = 1; i < lines.length; i++) {
+          if (!lines[i].trim()) continue;
+          const values = lines[i].split(",");
+          const row = {};
+          headers.forEach((h, idx) => {
+            row[h] = values[idx] ?? "";
+          });
+          result.push(row);
+        }
+        return { headers, rows: result };
+      }
+
+      function computeNumericColumns(data) {
+        return columns.filter((col) =>
+          data.every((r) => r[col] === "" || !isNaN(Number(r[col]))),
+        );
+      }
+
+      function renderDatasetSelect() {
+        if (!datasetSelect) return;
+        datasetSelect.innerHTML = "";
+        datasets.forEach((d, idx) => {
+          const opt = document.createElement("option");
+          opt.value = String(idx);
+          opt.textContent = d.label;
+          datasetSelect.appendChild(opt);
+        });
+        datasetSelect.value = String(datasets.indexOf(activeDataset));
+      }
+
+      async function loadDataset(d) {
+        activeDataset = d;
+        renderDatasetSelect();
+        const res = await fetch(d.path);
+        const text = await res.text();
+        const parsed = parseCsv(text);
+        columns = parsed.headers;
+        rows = parsed.rows;
+        initControls();
+        applyFilters();
+      }
+
+      function initControls() {
+        const makeOptions = (el, opts) => {
+          el.innerHTML = "";
+          opts.forEach((o) => {
+            const opt = document.createElement("option");
+            opt.value = o;
+            opt.textContent = o;
+            el.appendChild(opt);
+          });
+        };
+        makeOptions(filterColumnEl, ["(all)", ...columns]);
+        makeOptions(sortByEl, columns);
+        const numeric = computeNumericColumns(rows);
+        makeOptions(numericColumnEl, numeric.length ? numeric : ["(none)"]);
+        makeOptions(groupByEl, columns);
+      }
+
+      function updateStats(data) {
+        const numeric = computeNumericColumns(data);
+        const missing = data.reduce((sum, r) => {
+          return sum + columns.reduce((s, c) => s + (r[c] === "" ? 1 : 0), 0);
+        }, 0);
+        statRows.textContent = data.length;
+        statCols.textContent = columns.length;
+        statNumeric.textContent = numeric.length;
+        statMissing.textContent = missing;
+      }
+
+      function applyFilters() {
+        const q = searchEl.value.trim().toLowerCase();
+        const filterCol = filterColumnEl.value;
+        const filterVal = filterValueEl.value.trim().toLowerCase();
+        const rangeMatch = filterVal.includes("..")
+          ? filterVal.split("..").map((v) => Number(v.trim()))
+          : null;
+        filtered = rows.filter((r) => {
+          const rowText = columns
+            .map((c) => String(r[c]))
+            .join(" ")
+            .toLowerCase();
+          const matchesSearch = !q || rowText.includes(q);
+          let matchesFilter = true;
+          if (filterCol !== "(all)" && filterVal) {
+            if (
+              rangeMatch &&
+              rangeMatch.length === 2 &&
+              !rangeMatch.some(Number.isNaN)
+            ) {
+              const value = Number(r[filterCol]);
+              matchesFilter =
+                !Number.isNaN(value) &&
+                value >= rangeMatch[0] &&
+                value <= rangeMatch[1];
+            } else {
+              matchesFilter = String(r[filterCol])
+                .toLowerCase()
+                .includes(filterVal);
+            }
+          }
+          return matchesSearch && matchesFilter;
+        });
+
+        const sortKey = sortByEl.value;
+        filtered.sort((a, b) => {
+          const aVal = a[sortKey];
+          const bVal = b[sortKey];
+          const aNum = Number(aVal);
+          const bNum = Number(bVal);
+          const isNum = !isNaN(aNum) && !isNaN(bNum);
+          if (isNum) return orderEl.value === "asc" ? aNum - bNum : bNum - aNum;
+          return orderEl.value === "asc"
+            ? String(aVal).localeCompare(String(bVal))
+            : String(bVal).localeCompare(String(aVal));
+        });
+
+        page = 1;
+        renderPage();
+        updateStats(filtered);
+        renderCharts(filtered);
+      }
+
+      function renderPage() {
+        const size = Number(pageSizeEl.value || 50);
+        const totalPages = Math.max(1, Math.ceil(filtered.length / size));
+        page = Math.min(page, totalPages);
+        const start = (page - 1) * size;
+        const pageRows = filtered.slice(start, start + size);
+        pageIndexEl.textContent = String(page);
+        pageTotalEl.textContent = String(totalPages);
+        renderTable(pageRows);
+      }
+
+      function renderTable(data) {
+        dataTableHead.innerHTML = "";
+        dataTableBody.innerHTML = "";
+        const headRow = document.createElement("tr");
+        columns.forEach((c) => {
+          const th = document.createElement("th");
+          th.textContent = c;
+          headRow.appendChild(th);
+        });
+        dataTableHead.appendChild(headRow);
+        data.forEach((r) => {
+          const tr = document.createElement("tr");
+          columns.forEach((c) => {
+            const td = document.createElement("td");
+            td.textContent = r[c];
+            tr.appendChild(td);
+          });
+          dataTableBody.appendChild(tr);
+        });
+      }
+
+      function renderCharts(data) {
+        renderHistogram(data);
+        renderBarChart(data);
+      }
+
+      function renderHistogram(data) {
+        const col = numericColumnEl.value;
+        if (col === "(none)") {
+          const ctx = histChart.getContext("2d");
+          ctx.clearRect(0, 0, histChart.width, histChart.height);
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--muted",
+          );
+          ctx.fillText("No numeric columns available", 10, 20);
+          histMeta = null;
+          return;
+        }
+        const values = data.map((r) => Number(r[col])).filter((v) => !isNaN(v));
+        const ctx = histChart.getContext("2d");
+        ctx.clearRect(0, 0, histChart.width, histChart.height);
+        if (!values.length) {
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--muted",
+          );
+          ctx.fillText("No numeric data for histogram", 10, 20);
+          histMeta = null;
+          return;
+        }
+        const bins = Number(binsEl.value || 12);
+        const min = Math.min(...values);
+        const max = Math.max(...values);
+        const step = (max - min) / bins || 1;
+        const counts = Array(bins).fill(0);
+        values.forEach((v) => {
+          const idx = Math.min(bins - 1, Math.floor((v - min) / step));
+          counts[idx] += 1;
+        });
+        const maxCount = Math.max(...counts, 1);
+        const w = histChart.width;
+        const h = histChart.height;
+        const barW = w / bins;
+        histMeta = { min, max, step, bins, counts, barW, w, h, col };
+        counts.forEach((c, i) => {
+          const barH = (c / maxCount) * (h - 20);
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--accent",
+          );
+          ctx.fillRect(i * barW + 4, h - barH - 10, barW - 8, barH);
+        });
+      }
+
+      function renderBarChart(data) {
+        const groupBy = groupByEl.value;
+        const col = numericColumnEl.value;
+        if (col === "(none)") {
+          const ctx = barChart.getContext("2d");
+          ctx.clearRect(0, 0, barChart.width, barChart.height);
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--muted",
+          );
+          ctx.fillText("No numeric columns available", 10, 20);
+          barMeta = null;
+          return;
+        }
+        const topN = Number(topNEl.value || 10);
+        const map = new Map();
+        data.forEach((r) => {
+          const key = String(r[groupBy]);
+          const val = Number(r[col]);
+          if (isNaN(val)) return;
+          map.set(key, (map.get(key) || 0) + val);
+        });
+        const list = [...map.entries()]
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, topN);
+        const ctx = barChart.getContext("2d");
+        ctx.clearRect(0, 0, barChart.width, barChart.height);
+        if (!list.length) {
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--muted",
+          );
+          ctx.fillText("No numeric data for bar chart", 10, 20);
+          barMeta = null;
+          return;
+        }
+        const max = Math.max(...list.map((d) => d[1]), 1);
+        const h = barChart.height;
+        const w = barChart.width;
+        const barH = h / list.length;
+        barMeta = { list, barH, w, h, groupBy };
+        list.forEach((item, i) => {
+          const [label, value] = item;
+          const barW = (value / max) * (w - 140);
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--accent-2",
+          );
+          ctx.fillRect(120, i * barH + 6, barW, barH - 12);
+          ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+            "--text",
+          );
+          ctx.fillText(label, 10, i * barH + barH / 2 + 4);
+          ctx.fillText(fmt(value), 120 + barW + 8, i * barH + barH / 2 + 4);
+        });
+      }
+
+      function showTooltip(x, y, html) {
+        chartTooltip.innerHTML = html;
+        chartTooltip.style.left = `${x + 12}px`;
+        chartTooltip.style.top = `${y + 12}px`;
+        chartTooltip.classList.add("show");
+      }
+
+      function hideTooltip() {
+        chartTooltip.classList.remove("show");
+      }
+
+      function exportData(type) {
+        const payload =
+          type === "json"
+            ? JSON.stringify(filtered, null, 2)
+            : [
+                columns.join(","),
+                ...filtered.map((r) => columns.map((c) => r[c]).join(",")),
+              ].join("\n");
+        const blob = new Blob([payload], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = type === "json" ? "data.json" : "data.csv";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      histChart.addEventListener("mousemove", (e) => {
+        if (!histMeta) return;
+        const rect = histChart.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const idx = Math.min(
+          histMeta.bins - 1,
+          Math.max(0, Math.floor(x / histMeta.barW)),
+        );
+        const start = histMeta.min + idx * histMeta.step;
+        const end = start + histMeta.step;
+        const count = histMeta.counts[idx] || 0;
+        showTooltip(
+          e.clientX,
+          e.clientY,
+          `<strong>${histMeta.col}</strong><br>${start.toFixed(2)} to ${end.toFixed(2)}<br>${count} rows`,
+        );
+      });
+      histChart.addEventListener("mouseleave", hideTooltip);
+      histChart.addEventListener("click", (e) => {
+        if (!histMeta) return;
+        const rect = histChart.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const idx = Math.min(
+          histMeta.bins - 1,
+          Math.max(0, Math.floor(x / histMeta.barW)),
+        );
+        const start = histMeta.min + idx * histMeta.step;
+        const end = start + histMeta.step;
+        filterColumnEl.value = histMeta.col;
+        filterValueEl.value = `${start.toFixed(2)}..${end.toFixed(2)}`;
+        applyFilters();
+      });
+
+      barChart.addEventListener("mousemove", (e) => {
+        if (!barMeta) return;
+        const rect = barChart.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const idx = Math.min(
+          barMeta.list.length - 1,
+          Math.max(0, Math.floor(y / barMeta.barH)),
+        );
+        const item = barMeta.list[idx];
+        if (!item) return;
+        const [label, value] = item;
+        showTooltip(
+          e.clientX,
+          e.clientY,
+          `<strong>${label}</strong><br>${barMeta.groupBy}<br>${fmt(value)}`,
+        );
+      });
+      barChart.addEventListener("mouseleave", hideTooltip);
+      barChart.addEventListener("click", (e) => {
+        if (!barMeta) return;
+        const rect = barChart.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const idx = Math.min(
+          barMeta.list.length - 1,
+          Math.max(0, Math.floor(y / barMeta.barH)),
+        );
+        const item = barMeta.list[idx];
+        if (!item) return;
+        const [label] = item;
+        filterColumnEl.value = barMeta.groupBy;
+        filterValueEl.value = label;
+        applyFilters();
+      });
+
+      datasetSelect.addEventListener("change", (e) => {
+        const idx = Number(e.target.value);
+        if (!Number.isNaN(idx) && datasets[idx]) {
+          loadDataset(datasets[idx]);
+        }
+      });
+      [
+        searchEl,
+        filterColumnEl,
+        filterValueEl,
+        sortByEl,
+        orderEl,
+        pageSizeEl,
+        numericColumnEl,
+        groupByEl,
+        binsEl,
+        topNEl,
+      ].forEach((el) => el.addEventListener("input", applyFilters));
+      prevPage.addEventListener("click", () => {
+        page = Math.max(1, page - 1);
+        renderPage();
+      });
+      nextPage.addEventListener("click", () => {
+        const size = Number(pageSizeEl.value || 50);
+        const totalPages = Math.max(1, Math.ceil(filtered.length / size));
+        page = Math.min(totalPages, page + 1);
+        renderPage();
+      });
+      toggleTheme.addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+        renderCharts(filtered);
+      });
+      exportCsv.addEventListener("click", () => exportData("csv"));
+      exportJson.addEventListener("click", () => exportData("json"));
+
+      renderDatasetSelect();
+      loadDataset(activeDataset);
+    </script>
+  </body>
+</html>

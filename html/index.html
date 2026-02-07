@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Water Storage Control Room</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #eef2ff;
+        --card: rgba(255, 255, 255, 0.85);
+        --text: #0b1020;
+        --muted: #5b6780;
+        --accent: #7c3aed;
+        --accent-2: #14b8a6;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --border: rgba(99, 102, 241, 0.15);
+      }
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0a0f1f;
+        --card: rgba(15, 23, 42, 0.9);
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #a78bfa;
+        --accent-2: #2dd4bf;
+        --danger: #f87171;
+        --warning: #fbbf24;
+        --border: rgba(148, 163, 184, 0.2);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Tahoma, Arial, sans-serif;
+        background:
+          radial-gradient(circle at 10% 20%, #e0e7ff 0, transparent 35%),
+          radial-gradient(circle at 90% 10%, #f0f9ff 0, transparent 40%),
+          var(--bg);
+        color: var(--text);
+      }
+      header {
+        padding: 24px;
+        background: linear-gradient(120deg, #7c3aed, #2563eb);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        backdrop-filter: blur(12px);
+      }
+      header h1 {
+        margin: 0 0 6px;
+        font-size: 24px;
+      }
+      header p {
+        margin: 0 0 12px;
+        opacity: 0.9;
+      }
+      header .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      header button,
+      header label.file-btn,
+      header a.file-btn {
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-size: 13px;
+        text-decoration: none;
+      }
+      header input[type="file"] {
+        display: none;
+      }
+      main {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .layout {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .topbar {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        backdrop-filter: blur(10px);
+      }
+      label {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 6px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .stat strong {
+        font-size: 20px;
+      }
+      .tabs button {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 8px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .tabs button.active {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+      }
+      .table th,
+      .table td {
+        padding: 10px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        font-size: 14px;
+      }
+      .badge {
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        color: white;
+      }
+      .up {
+        background: var(--accent-2);
+      }
+      .down {
+        background: var(--danger);
+      }
+      .flat {
+        background: var(--muted);
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .bar {
+        height: 10px;
+        background: #e5e7eb;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      [data-theme="dark"] .bar {
+        background: #1f2937;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        background: var(--accent);
+      }
+      .bar.after span {
+        background: var(--accent-2);
+      }
+      .row-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .chart {
+        width: 100%;
+        height: 260px;
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        padding: 8px;
+      }
+      .tooltip {
+        position: fixed;
+        pointer-events: none;
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 8px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.15s ease,
+          transform 0.15s ease;
+        z-index: 50;
+      }
+      .tooltip.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 12px;
+      }
+      .pagination button {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--text);
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .pill {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+      }
+      .highlight {
+        color: var(--warning);
+      }
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: -420px;
+        width: 420px;
+        height: 100vh;
+        background: var(--card);
+        border-left: 1px solid var(--border);
+        box-shadow: -10px 0 30px rgba(15, 23, 42, 0.2);
+        transition: right 0.25s ease;
+        z-index: 20;
+        padding: 16px;
+        overflow: auto;
+      }
+      .drawer.open {
+        right: 0;
+      }
+      .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+        z-index: 10;
+      }
+      .overlay.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        font-size: 12px;
+      }
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .toggle input {
+        width: auto;
+      }
+      .mini-chart {
+        width: 100%;
+        height: 120px;
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        padding: 6px;
+      }
+      .toast {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 10px 12px;
+        border-radius: 10px;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        z-index: 30;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .col-toggle {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+      .col-hidden {
+        display: none;
+      }
+      @media (max-width: 1100px) {
+        .topbar {
+          grid-template-columns: 1fr;
+        }
+        .controls {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .controls {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Water Storage Control Room</h1>
+      <p>
+        Interactive analytics for storage before/after with filters, charts,
+        locality summaries, and exports.
+      </p>
+      <div class="actions">
+        <a href="data.html" class="file-btn">Data Explorer</a>
+        <a href="../graph/water_simulation.html" class="file-btn">Results</a>
+        <button id="resetFilters">Reset filters</button>
+        <button id="toggleTheme">Toggle theme</button>
+        <label class="toggle"
+          ><input id="autoRefresh" type="checkbox" /> Auto-refresh</label
+        >
+      </div>
+    </header>
+    <main>
+      <div class="layout">
+        <div class="topbar">
+          <section class="card">
+            <div class="row-title">
+              <h3 style="margin: 0">Filters</h3>
+              <span class="muted">Refine results</span>
+            </div>
+            <div class="controls">
+              <div>
+                <label for="search">Search by storage/locality</label>
+                <input id="search" placeholder="e.g., 12" />
+              </div>
+              <div>
+                <label for="localityFilter">Locality</label>
+                <select id="localityFilter">
+                  <option value="">All</option>
+                </select>
+              </div>
+              <div>
+                <label for="sortBy">Sort by</label>
+                <select id="sortBy">
+                  <option value="storage_id">Storage ID</option>
+                  <option value="locality_id">Locality ID</option>
+                  <option value="before_m3">Before (m3)</option>
+                  <option value="after_m3">After (m3)</option>
+                  <option value="delta">Delta (m3)</option>
+                </select>
+              </div>
+              <div>
+                <label for="order">Order</label>
+                <select id="order">
+                  <option value="asc">Ascending</option>
+                  <option value="desc">Descending</option>
+                </select>
+              </div>
+              <div>
+                <label for="minDelta">Min Delta (m3)</label>
+                <input
+                  id="minDelta"
+                  type="number"
+                  step="0.01"
+                  placeholder="-500"
+                />
+              </div>
+              <div>
+                <label for="maxDelta">Max Delta (m3)</label>
+                <input
+                  id="maxDelta"
+                  type="number"
+                  step="0.01"
+                  placeholder="500"
+                />
+              </div>
+              <div>
+                <label for="minAfter">Min After (m3)</label>
+                <input
+                  id="minAfter"
+                  type="number"
+                  step="0.01"
+                  placeholder="0"
+                />
+              </div>
+              <div>
+                <label for="maxAfter">Max After (m3)</label>
+                <input
+                  id="maxAfter"
+                  type="number"
+                  step="0.01"
+                  placeholder="10000"
+                />
+              </div>
+              <div>
+                <label for="direction">Delta Direction</label>
+                <select id="direction">
+                  <option value="all">All</option>
+                  <option value="up">Increases only</option>
+                  <option value="down">Decreases only</option>
+                </select>
+              </div>
+              <div>
+                <label for="pageSize">Page Size</label>
+                <select id="pageSize">
+                  <option value="10">10</option>
+                  <option value="25" selected>25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+              <div>
+                <label for="threshold">Alert Threshold (m3)</label>
+                <input id="threshold" type="number" step="0.01" value="-500" />
+              </div>
+              <div>
+                <label for="alertOnly">Show Alerts Only</label>
+                <select id="alertOnly">
+                  <option value="no">No</option>
+                  <option value="yes">Yes</option>
+                </select>
+              </div>
+              <div>
+                <label>Delta Range (m3)</label>
+                <div class="pill">
+                  <span id="deltaMinLabel">-1000</span>
+                  <input
+                    id="deltaMinRange"
+                    type="range"
+                    min="-5000"
+                    max="5000"
+                    step="10"
+                    value="-1000"
+                  />
+                </div>
+              </div>
+              <div>
+                <label>&nbsp;</label>
+                <div class="pill">
+                  <span id="deltaMaxLabel">1000</span>
+                  <input
+                    id="deltaMaxRange"
+                    type="range"
+                    min="-5000"
+                    max="5000"
+                    step="10"
+                    value="1000"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="row-title">
+              <h3 style="margin: 0">Summary</h3>
+              <span class="muted">Live totals</span>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <span class="muted">Storages</span>
+                <strong id="statCount">0</strong>
+              </div>
+              <div class="stat">
+                <span class="muted">Total Before</span>
+                <strong id="statBefore">0</strong>
+              </div>
+              <div class="stat">
+                <span class="muted">Total After</span>
+                <strong id="statAfter">0</strong>
+              </div>
+              <div class="stat">
+                <span class="muted">Net Change</span>
+                <strong id="statDelta">0</strong>
+              </div>
+              <div class="stat">
+                <span class="muted">Avg After</span>
+                <strong id="statAvgAfter">0</strong>
+              </div>
+              <div class="stat">
+                <span class="muted">Alert Count</span>
+                <strong id="statAlerts">0</strong>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="content">
+          <div class="tabs">
+            <button class="active" data-tab="storages">Storages</button>
+            <button data-tab="localities">Localities</button>
+          </div>
+
+          <section class="card tab" id="tab-storages">
+            <div class="row-title">
+              <h2 style="margin: 0">Storage Levels</h2>
+              <span class="muted" id="tableSummary">0 rows</span>
+            </div>
+            <table class="table" id="storageTable">
+              <thead>
+                <tr>
+                  <th data-col="storage">Storage</th>
+                  <th data-col="locality">Locality</th>
+                  <th data-col="before">Before (m3)</th>
+                  <th data-col="after">After (m3)</th>
+                  <th data-col="delta">Delta</th>
+                  <th data-col="status">Status</th>
+                  <th data-col="visual">Visual</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="pagination">
+              <div class="pill">
+                Page <span id="pageIndex">1</span> /
+                <span id="pageTotal">1</span>
+              </div>
+              <div style="display: flex; gap: 6px">
+                <button id="prevPage">Prev</button>
+                <button id="nextPage">Next</button>
+              </div>
+            </div>
+          </section>
+          <section class="card tab" id="tab-localities" style="display: none">
+            <div class="row-title">
+              <h2 style="margin: 0">Locality Summary</h2>
+              <span class="muted">Aggregated totals by locality</span>
+            </div>
+            <table class="table" id="localityTable">
+              <thead>
+                <tr>
+                  <th>Locality</th>
+                  <th>Storages</th>
+                  <th>Total Before</th>
+                  <th>Total After</th>
+                  <th>Delta</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer" id="drawer">
+      <div class="row-title">
+        <h3 style="margin: 0">Storage Details</h3>
+        <button id="closeDrawer">Close</button>
+      </div>
+      <div id="drawerContent" class="muted">
+        Select a row to inspect details.
+      </div>
+      <canvas
+        id="detailChart"
+        class="mini-chart"
+        width="360"
+        height="120"
+      ></canvas>
+      <div style="margin-top: 8px; display: flex; gap: 8px">
+        <button id="copyDetails">Copy details</button>
+        <button id="pinRow">Pin row</button>
+      </div>
+    </aside>
+    <div class="toast" id="toast"></div>
+
+    <script>
+      const DATA_URL = "../output/water_distribution_plan.json";
+
+      const searchEl = document.getElementById("search");
+      const localityFilterEl = document.getElementById("localityFilter");
+      const sortByEl = document.getElementById("sortBy");
+      const orderEl = document.getElementById("order");
+      const minDeltaEl = document.getElementById("minDelta");
+      const maxDeltaEl = document.getElementById("maxDelta");
+      const minAfterEl = document.getElementById("minAfter");
+      const maxAfterEl = document.getElementById("maxAfter");
+      const directionEl = document.getElementById("direction");
+      const pageSizeEl = document.getElementById("pageSize");
+      const thresholdEl = document.getElementById("threshold");
+      const alertOnlyEl = document.getElementById("alertOnly");
+      const deltaMinRange = document.getElementById("deltaMinRange");
+      const deltaMaxRange = document.getElementById("deltaMaxRange");
+      const deltaMinLabel = document.getElementById("deltaMinLabel");
+      const deltaMaxLabel = document.getElementById("deltaMaxLabel");
+
+      const tableBody = document.querySelector("#storageTable tbody");
+      const localityBody = document.querySelector("#localityTable tbody");
+      const statCount = document.getElementById("statCount");
+      const statBefore = document.getElementById("statBefore");
+      const statAfter = document.getElementById("statAfter");
+      const statDelta = document.getElementById("statDelta");
+      const statAvgAfter = document.getElementById("statAvgAfter");
+      const statAlerts = document.getElementById("statAlerts");
+      const tableSummary = document.getElementById("tableSummary");
+      const pageIndexEl = document.getElementById("pageIndex");
+      const pageTotalEl = document.getElementById("pageTotal");
+
+      const resetFilters = document.getElementById("resetFilters");
+      const toggleTheme = document.getElementById("toggleTheme");
+      const autoRefresh = document.getElementById("autoRefresh");
+      const prevPage = document.getElementById("prevPage");
+      const nextPage = document.getElementById("nextPage");
+
+      const overlay = document.getElementById("overlay");
+      const drawer = document.getElementById("drawer");
+      const drawerContent = document.getElementById("drawerContent");
+      const closeDrawer = document.getElementById("closeDrawer");
+      const detailChart = document.getElementById("detailChart");
+      const copyDetails = document.getElementById("copyDetails");
+      const pinRow = document.getElementById("pinRow");
+      const toast = document.getElementById("toast");
+
+      let rows = [];
+      let filteredRows = [];
+      let page = 1;
+      let pinnedRowId = null;
+      let refreshTimer = null;
+
+      const fmt = (n) =>
+        Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+
+      function buildLocalityFilter(data) {
+        localityFilterEl.innerHTML = '<option value="">All</option>';
+        const ids = [...new Set(data.map((r) => r.locality_id))].sort(
+          (a, b) => a - b,
+        );
+        for (const id of ids) {
+          const opt = document.createElement("option");
+          opt.value = String(id);
+          opt.textContent = String(id);
+          localityFilterEl.appendChild(opt);
+        }
+      }
+
+      function computeStats(data) {
+        const totalBefore = data.reduce((sum, r) => sum + r.before_m3, 0);
+        const totalAfter = data.reduce((sum, r) => sum + r.after_m3, 0);
+        const delta = totalAfter - totalBefore;
+        const avgAfter = data.length ? totalAfter / data.length : 0;
+        const threshold = Number(thresholdEl.value || -Infinity);
+        const alerts = data.filter(
+          (r) => r.after_m3 - r.before_m3 <= threshold,
+        ).length;
+        statCount.textContent = data.length;
+        statBefore.textContent = fmt(totalBefore);
+        statAfter.textContent = fmt(totalAfter);
+        statDelta.textContent = fmt(delta);
+        statAvgAfter.textContent = fmt(avgAfter);
+        statAlerts.textContent = String(alerts);
+      }
+
+      function getBadge(delta) {
+        if (delta > 0.01) return "up";
+        if (delta < -0.01) return "down";
+        return "flat";
+      }
+
+      function renderTable(data) {
+        tableBody.innerHTML = "";
+        if (!data.length) {
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = 7;
+          td.textContent = "No results";
+          tr.appendChild(td);
+          tableBody.appendChild(tr);
+          return;
+        }
+        const maxValue = Math.max(
+          ...data.map((r) => Math.max(r.before_m3, r.after_m3, 1)),
+        );
+        for (const row of data) {
+          const delta = row.after_m3 - row.before_m3;
+          const threshold = Number(thresholdEl.value || -Infinity);
+          const status = delta <= threshold ? "ALERT" : "OK";
+          const statusClass = delta <= threshold ? "highlight" : "muted";
+          const tr = document.createElement("tr");
+          tr.dataset.storageId = row.storage_id;
+          tr.innerHTML = `
+          <td data-col="storage">#${row.storage_id}</td>
+          <td data-col="locality">${row.locality_id}</td>
+          <td data-col="before">${fmt(row.before_m3)}</td>
+          <td data-col="after">${fmt(row.after_m3)}</td>
+          <td data-col="delta"><span class="badge ${getBadge(delta)}">${fmt(delta)}</span></td>
+          <td data-col="status"><strong class="${statusClass}">${status}</strong></td>
+          <td data-col="visual">
+            <div class="bars">
+              <div>
+                <div class="muted">Before</div>
+                <div class="bar"><span style="width:${(row.before_m3 / maxValue) * 100}%"></span></div>
+              </div>
+              <div>
+                <div class="muted">After</div>
+                <div class="bar after"><span style="width:${(row.after_m3 / maxValue) * 100}%"></span></div>
+              </div>
+            </div>
+          </td>
+        `;
+          tr.addEventListener("click", () => openDrawer(row));
+          tableBody.appendChild(tr);
+        }
+      }
+
+      function renderLocalitySummary(data) {
+        const map = new Map();
+        for (const row of data) {
+          const entry = map.get(row.locality_id) || {
+            locality_id: row.locality_id,
+            count: 0,
+            before: 0,
+            after: 0,
+          };
+          entry.count += 1;
+          entry.before += row.before_m3;
+          entry.after += row.after_m3;
+          map.set(row.locality_id, entry);
+        }
+        const list = [...map.values()].sort((a, b) => b.after - a.after);
+        localityBody.innerHTML = "";
+        for (const item of list) {
+          const tr = document.createElement("tr");
+          const delta = item.after - item.before;
+          tr.innerHTML = `
+            <td>${item.locality_id}</td>
+            <td>${item.count}</td>
+            <td>${fmt(item.before)}</td>
+            <td>${fmt(item.after)}</td>
+            <td><span class="badge ${getBadge(delta)}">${fmt(delta)}</span></td>
+          `;
+          localityBody.appendChild(tr);
+        }
+      }
+
+      function openDrawer(row) {
+        drawer.classList.add("open");
+        overlay.classList.add("show");
+        const delta = row.after_m3 - row.before_m3;
+        drawerContent.innerHTML = `
+          <p><strong>Storage:</strong> #${row.storage_id}</p>
+          <p><strong>Locality:</strong> ${row.locality_id}</p>
+          <p><strong>Before:</strong> ${fmt(row.before_m3)} m3</p>
+          <p><strong>After:</strong> ${fmt(row.after_m3)} m3</p>
+          <p><strong>Delta:</strong> ${fmt(delta)} m3</p>
+        `;
+        drawDetailChart(row);
+        pinnedRowId = row.storage_id;
+      }
+
+      function drawDetailChart(row) {
+        const ctx = detailChart.getContext("2d");
+        ctx.clearRect(0, 0, detailChart.width, detailChart.height);
+        const max = Math.max(row.before_m3, row.after_m3, 1);
+        const barW = 120;
+        const h = detailChart.height - 20;
+        const beforeH = (row.before_m3 / max) * h;
+        const afterH = (row.after_m3 / max) * h;
+        ctx.fillStyle = "#2563eb";
+        ctx.fillRect(60, h - beforeH + 10, barW, beforeH);
+        ctx.fillStyle = "#10b981";
+        ctx.fillRect(220, h - afterH + 10, barW, afterH);
+        ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(
+          "--text",
+        );
+        ctx.fillText("Before", 80, h + 18);
+        ctx.fillText("After", 250, h + 18);
+      }
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1800);
+      }
+
+      function applyFilters() {
+        const q = searchEl.value.trim().toLowerCase();
+        const locFilter = localityFilterEl.value;
+        const minDelta =
+          minDeltaEl.value === "" ? -Infinity : Number(minDeltaEl.value);
+        const maxDelta =
+          maxDeltaEl.value === "" ? Infinity : Number(maxDeltaEl.value);
+        const minAfter =
+          minAfterEl.value === "" ? -Infinity : Number(minAfterEl.value);
+        const maxAfter =
+          maxAfterEl.value === "" ? Infinity : Number(maxAfterEl.value);
+        const direction = directionEl.value;
+        const threshold = Number(thresholdEl.value || -Infinity);
+        const alertOnly = alertOnlyEl.value === "yes";
+
+        filteredRows = rows.filter((r) => {
+          const delta = r.after_m3 - r.before_m3;
+          const matchesQuery =
+            !q ||
+            String(r.storage_id).includes(q) ||
+            String(r.locality_id).includes(q);
+          const matchesLoc = !locFilter || String(r.locality_id) === locFilter;
+          const matchesDelta = delta >= minDelta && delta <= maxDelta;
+          const matchesAfter = r.after_m3 >= minAfter && r.after_m3 <= maxAfter;
+          const matchesDir =
+            direction === "all" ||
+            (direction === "up" && delta > 0) ||
+            (direction === "down" && delta < 0);
+          const matchesAlert = !alertOnly || delta <= threshold;
+          return (
+            matchesQuery &&
+            matchesLoc &&
+            matchesDelta &&
+            matchesAfter &&
+            matchesDir &&
+            matchesAlert
+          );
+        });
+
+        const sortKey = sortByEl.value;
+        filteredRows = filteredRows.sort((a, b) => {
+          const aVal =
+            sortKey === "delta" ? a.after_m3 - a.before_m3 : a[sortKey];
+          const bVal =
+            sortKey === "delta" ? b.after_m3 - b.before_m3 : b[sortKey];
+          return orderEl.value === "asc" ? aVal - bVal : bVal - aVal;
+        });
+
+        page = 1;
+        renderPage();
+        computeStats(filteredRows);
+        renderLocalitySummary(filteredRows);
+        if (pinnedRowId) {
+          const pinned = rows.find((r) => r.storage_id === pinnedRowId);
+          if (pinned) drawDetailChart(pinned);
+        }
+      }
+
+      function renderPage() {
+        const size = Number(pageSizeEl.value || 25);
+        const totalPages = Math.max(1, Math.ceil(filteredRows.length / size));
+        page = Math.min(page, totalPages);
+        const start = (page - 1) * size;
+        const pageRows = filteredRows.slice(start, start + size);
+        tableSummary.textContent = `${filteredRows.length} rows (showing ${pageRows.length})`;
+        pageIndexEl.textContent = String(page);
+        pageTotalEl.textContent = String(totalPages);
+        renderTable(pageRows);
+      }
+
+      function switchTab(tabId) {
+        document.querySelectorAll(".tabs button").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.tab === tabId);
+        });
+        document.querySelectorAll(".tab").forEach((section) => {
+          section.style.display =
+            section.id === `tab-${tabId}` ? "block" : "none";
+        });
+      }
+
+      async function loadDefault() {
+        const res = await fetch(DATA_URL);
+        const data = await res.json();
+        loadData(data);
+      }
+
+      function loadData(data) {
+        rows = (data.storage_levels || []).map((r) => ({
+          storage_id: Number(r.storage_id),
+          locality_id: Number(r.locality_id),
+          before_m3: Number(r.before_m3),
+          after_m3: Number(r.after_m3),
+        }));
+        buildLocalityFilter(rows);
+        applyFilters();
+      }
+
+      function resetViewState() {
+        searchEl.value = "";
+        localityFilterEl.value = "";
+        sortByEl.value = "storage_id";
+        orderEl.value = "asc";
+        minDeltaEl.value = "";
+        maxDeltaEl.value = "";
+        minAfterEl.value = "";
+        maxAfterEl.value = "";
+        directionEl.value = "all";
+        pageSizeEl.value = "25";
+        thresholdEl.value = "-500";
+        alertOnlyEl.value = "no";
+        deltaMinRange.value = "-1000";
+        deltaMaxRange.value = "1000";
+        syncRangeLabels();
+        applyFilters();
+        showToast("Filters reset");
+      }
+
+      function syncRangeLabels() {
+        deltaMinLabel.textContent = deltaMinRange.value;
+        deltaMaxLabel.textContent = deltaMaxRange.value;
+        minDeltaEl.value = deltaMinRange.value;
+        maxDeltaEl.value = deltaMaxRange.value;
+      }
+
+      resetFilters.addEventListener("click", resetViewState);
+      toggleTheme.addEventListener("click", () => {
+        const root = document.documentElement;
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      });
+      autoRefresh.addEventListener("change", () => {
+        if (autoRefresh.checked) {
+          refreshTimer = setInterval(loadDefault, 10000);
+          showToast("Auto-refresh on");
+        } else {
+          clearInterval(refreshTimer);
+          refreshTimer = null;
+          showToast("Auto-refresh off");
+        }
+      });
+      prevPage.addEventListener("click", () => {
+        page = Math.max(1, page - 1);
+        renderPage();
+      });
+      nextPage.addEventListener("click", () => {
+        const size = Number(pageSizeEl.value || 25);
+        const totalPages = Math.max(1, Math.ceil(filteredRows.length / size));
+        page = Math.min(totalPages, page + 1);
+        renderPage();
+      });
+      document.querySelectorAll(".tabs button").forEach((btn) => {
+        btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+      });
+
+      deltaMinRange.addEventListener("input", () => {
+        if (Number(deltaMinRange.value) > Number(deltaMaxRange.value)) {
+          deltaMaxRange.value = deltaMinRange.value;
+        }
+        syncRangeLabels();
+        applyFilters();
+      });
+      deltaMaxRange.addEventListener("input", () => {
+        if (Number(deltaMaxRange.value) < Number(deltaMinRange.value)) {
+          deltaMinRange.value = deltaMaxRange.value;
+        }
+        syncRangeLabels();
+        applyFilters();
+      });
+      closeDrawer.addEventListener("click", () => {
+        drawer.classList.remove("open");
+        overlay.classList.remove("show");
+      });
+      overlay.addEventListener("click", () => {
+        drawer.classList.remove("open");
+        overlay.classList.remove("show");
+      });
+      copyDetails.addEventListener("click", async () => {
+        if (!pinnedRowId) return;
+        const row = rows.find((r) => r.storage_id === pinnedRowId);
+        if (!row) return;
+        const delta = row.after_m3 - row.before_m3;
+        await navigator.clipboard.writeText(
+          `Storage ${row.storage_id} | Locality ${row.locality_id} | Before ${row.before_m3} | After ${row.after_m3} | Delta ${delta}`,
+        );
+        showToast("Details copied");
+      });
+      pinRow.addEventListener("click", () => {
+        showToast(pinnedRowId ? `Pinned #${pinnedRowId}` : "No row selected");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "/") {
+          e.preventDefault();
+          searchEl.focus();
+        }
+        if (e.key.toLowerCase() === "r") resetViewState();
+        if (e.key.toLowerCase() === "t") toggleTheme.click();
+      });
+
+      [
+        searchEl,
+        localityFilterEl,
+        sortByEl,
+        orderEl,
+        minDeltaEl,
+        maxDeltaEl,
+        minAfterEl,
+        maxAfterEl,
+        directionEl,
+        pageSizeEl,
+        thresholdEl,
+        alertOnlyEl,
+      ].forEach((el) => el.addEventListener("input", applyFilters));
+
+      loadDefault().catch(() => {
+        tableBody.innerHTML =
+          '<tr><td colspan="7">Load data using "Load JSON file".</td></tr>';
+      });
+      syncRangeLabels();
+    </script>
+  </body>
+</html>
