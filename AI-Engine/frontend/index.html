@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GovBridge — Unified Services Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="loginOverlay" class="overlay" style="display: none">
+      <div class="loginCard">
+        <div class="loginHead">
+          <div class="seal">GB</div>
+          <div>
+            <div style="font-weight: 800; font-size: 13px">
+              GovBridge Access Portal
+            </div>
+            <div class="tiny">
+              Role is determined automatically by email domain
+            </div>
+          </div>
+        </div>
+        <div class="loginBody">
+          <h2>Sign in</h2>
+          <p>
+            If your email ends with <b>@gov.pal</b>, you will be signed in as a
+            <b>ministry employee</b>. Otherwise you will be signed in as a
+            <b>citizen</b>.
+          </p>
+
+          <div class="twoCol">
+            <div>
+              <div class="tiny" style="margin: 0 0 6px">Email</div>
+              <input
+                id="loginEmail"
+                class="field"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div>
+              <div class="tiny" style="margin: 0 0 6px">Password</div>
+              <input
+                id="loginPass"
+                type="password"
+                class="field"
+                placeholder="••••••••"
+              />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 12px">
+            <button id="loginBtn" class="btn" style="flex: 1">Login</button>
+            <button id="loginClearBtn" class="btn secondary" style="flex: 1">
+              Clear
+            </button>
+          </div>
+
+          <div id="loginError" class="error"></div>
+
+          <div class="hint">
+            <b>Demo note:</b> this is frontend-only login for now (no real
+            password check).<br />
+            Next step: backend `/login` + JWT.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="seal">GB</div>
+          <div>
+            <h1>GovBridge — Unified Services Assistant</h1>
+            <p>Government Info AI Assistant</p>
+          </div>
+        </div>
+        <div class="row" style="gap: 10px">
+          <div id="roleBadge" class="badge">
+            <span class="roleDot"></span>
+            <span id="roleText">Guest</span>
+          </div>
+          <div class="pill">
+            <span class="dot"></span><span id="statusText">Connected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card sidebar">
+        <h2>CONTROL PANEL</h2>
+
+        <div class="side-item">
+          <p class="title">Account</p>
+          <p class="desc tiny"><b>Email:</b> <span id="emailText">—</span></p>
+          <p class="desc tiny"><b>Role:</b> <span id="roleText2">—</span></p>
+          <div class="row" style="margin-top: 10px">
+            <button class="btn secondary" id="logoutBtn" style="flex: 1">
+              Logout
+            </button>
+            <button class="btn secondary" id="whoamiBtn" style="flex: 1">
+              Who am I
+            </button>
+          </div>
+        </div>
+
+        <div class="side-item">
+          <p class="title">Backend</p>
+          <p class="desc tiny">API base URL</p>
+          <input class="small" id="apiBase" value="http://127.0.0.1:8000" />
+          <div class="row" style="margin-top: 10px">
+            <button class="btn secondary" id="pingBtn" style="flex: 1">
+              Ping
+            </button>
+          </div>
+        </div>
+
+        <div class="side-item">
+          <p class="title">Sessions (Saved Chats)</p>
+          <p class="desc">Switch between saved sessions, or start a new one.</p>
+          <select id="sessionSelect"></select>
+          <div class="row" style="margin-top: 10px">
+            <button class="btn" id="newSessionBtn" style="flex: 1">New</button>
+            <button class="btn danger" id="deleteSessionBtn" style="flex: 1">
+              Delete
+            </button>
+          </div>
+          <p class="tiny" style="margin-top: 10px">
+            Stored locally in your browser (localStorage).
+          </p>
+        </div>
+      </div>
+
+      <div class="card main">
+        <div class="main-head">
+          <div class="left">
+            <h2>Unified Services Chat</h2>
+            <p id="roleDesc">One message shows everything: points + charts.</p>
+          </div>
+          <div class="trace">Trace: <span id="traceId">—</span></div>
+        </div>
+
+        <div id="chat" class="chat"></div>
+
+        <div class="composer">
+          <input id="msg" class="input" placeholder="Type your query…" />
+          <button id="send" class="btn">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

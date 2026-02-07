@@ -1,0 +1,285 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  width: 430px;
+  max-height: calc(100% - 24px);
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial;
+}
+
+.panelHeader {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 0.98),
+    rgba(255, 255, 255, 0.9)
+  );
+}
+.panelHeader h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+.btn.secondary {
+  background: #eee;
+  color: #111;
+}
+
+.panelBody {
+  padding: 12px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.sectionTitle {
+  font-size: 12px;
+  font-weight: 900;
+  margin: 0 0 8px 0;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.small {
+  font-size: 12px;
+  color: #444;
+}
+.muted {
+  color: #666;
+}
+
+input[type="text"],
+input[type="range"],
+select {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 2px;
+  font-size: 13px;
+}
+.checkRow input {
+  width: auto;
+  transform: scale(1.1);
+}
+
+.tabs {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 10px;
+}
+.tab {
+  flex: 1;
+  padding: 10px 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  user-select: none;
+  color: #333;
+}
+.tab.active {
+  background: #111;
+  color: #fff;
+}
+
+.list {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+.listHeader {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  background: rgba(0, 0, 0, 0.02);
+  font-size: 12px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.listBody {
+  max-height: 220px;
+  overflow: auto;
+  padding: 6px 10px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+}
+.item:last-child {
+  border-bottom: 0;
+}
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.itemLabel {
+  font-size: 13px;
+  color: #111;
+}
+.itemMeta {
+  font-size: 11px;
+  color: #666;
+}
+
+.rowBtns {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.rowBtns .btn {
+  flex: 1;
+}
+
+.report {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 11px;
+  white-space: pre-wrap;
+  background: #0b1020;
+  color: #d6e1ff;
+  border-radius: 12px;
+  padding: 10px;
+  max-height: 200px;
+  overflow: auto;
+  line-height: 1.35;
+}
+
+.panelToggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 9999;
+  display: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  background: rgba(17, 17, 17, 0.9);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+}
+.hidden {
+  display: none !important;
+}
+
+.opRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 6px 0 10px 0;
+}
+.opRow label {
+  font-size: 12px;
+  color: #222;
+  font-weight: 800;
+}
+.opRow select {
+  width: 140px;
+}
+
+.compRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  margin-bottom: 6px;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.compRow:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+.compRow.selected {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  flex: 0 0 auto;
+}
+.compLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

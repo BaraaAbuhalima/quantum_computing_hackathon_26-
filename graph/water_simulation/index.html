@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Water Distribution Simulation</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="./style.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+
+</head>
+
+<body>
+<div id="map"></div>
+
+<button id="openPanelBtn" class="panelToggle">☰ Controls</button>
+
+<div id="panel" class="panel">
+  <div class="panelHeader">
+    <h3>Water Flow Controls</h3>
+    <div style="display:flex; gap:8px;">
+      <button id="downloadBtn" class="btn secondary">Download JSON</button>
+      <button id="hidePanelBtn" class="btn">Hide</button>
+    </div>
+  </div>
+
+  <div class="panelBody">
+
+    <div class="section">
+      <div class="sectionTitle">Visibility</div>
+      <label class="checkRow"><input id="cbAlloc" type="checkbox" checked />Show Source → Locality flows</label>
+      <label class="checkRow"><input id="cbTrans" type="checkbox" checked />Show Locality → Locality transfers</label>
+      <label class="checkRow"><input id="cbMarkers" type="checkbox" checked />Show markers</label>
+      <div class="small muted">Tip: increase threshold to reduce spaghetti.</div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">Selection</div>
+
+      <div class="tabs">
+        <div id="tabLocalities" class="tab active">Localities</div>
+        <div id="tabSources" class="tab">Sources</div>
+        <div id="tabCombined" class="tab">Combined</div>
+      </div>
+
+      <div id="paneLocalities">
+        <div class="opRow">
+          <label>Localities operator</label>
+          <select id="locOp">
+            <option value="OR" selected>OR</option>
+            <option value="AND">AND</option>
+          </select>
+        </div>
+
+        <input id="searchLocalities" type="text" placeholder="Search localities…" />
+        <div class="list" style="margin-top:8px;">
+          <div class="listHeader"><span>Localities</span><span class="muted" id="locCount"></span></div>
+          <div class="listBody" id="locList"></div>
+        </div>
+        <div class="rowBtns">
+          <button id="locClearBtn" class="btn secondary">Clear</button>
+          <button id="locAllBtn" class="btn secondary">Select All</button>
+        </div>
+        <div class="small muted" style="margin-top:6px;">
+          Empty selection = show nothing (no connections).
+        </div>
+      </div>
+
+      <!-- Sources tab -->
+      <div id="paneSources" class="hidden">
+        <div class="opRow">
+          <label>Sources operator</label>
+          <select id="srcOp">
+            <option value="OR" selected>OR</option>
+            <option value="AND">AND</option>
+          </select>
+        </div>
+
+        <input id="searchSources" type="text" placeholder="Search sources (id/name)…" />
+        <div class="list" style="margin-top:8px;">
+          <div class="listHeader"><span>Sources</span><span class="muted" id="srcCount"></span></div>
+          <div class="listBody" id="srcList"></div>
+        </div>
+        <div class="rowBtns">
+          <button id="srcClearBtn" class="btn secondary">Clear</button>
+          <button id="srcAllBtn" class="btn secondary">Select All</button>
+        </div>
+        <div class="small muted" style="margin-top:6px;">
+          Empty selection = show nothing (no connections).
+        </div>
+      </div>
+
+      <div id="paneCombined" class="hidden">
+        <div class="opRow">
+          <label>Localities operator</label>
+          <select id="combLocOp">
+            <option value="OR" selected>OR</option>
+            <option value="AND">AND</option>
+          </select>
+        </div>
+        <div class="opRow">
+          <label>Sources operator</label>
+          <select id="combSrcOp">
+            <option value="OR" selected>OR</option>
+            <option value="AND">AND</option>
+          </select>
+        </div>
+        <div class="opRow">
+          <label>Between (Loc ↔ Src)</label>
+          <select id="combBetweenOp">
+            <option value="AND" selected>AND</option>
+            <option value="OR">OR</option>
+          </select>
+        </div>
+
+        <input id="searchCombinedLocalities" type="text" placeholder="Search localities…" />
+        <div class="list" style="margin-top:8px;">
+          <div class="listHeader"><span>Localities</span><span class="muted" id="combLocCount"></span></div>
+          <div class="listBody" id="combLocList"></div>
+        </div>
+        <div class="rowBtns">
+          <button id="combLocClearBtn" class="btn secondary">Clear</button>
+          <button id="combLocAllBtn" class="btn secondary">Select All</button>
+        </div>
+
+        <div style="height:10px;"></div>
+
+        <input id="searchCombinedSources" type="text" placeholder="Search sources…" />
+        <div class="list" style="margin-top:8px;">
+          <div class="listHeader"><span>Sources</span><span class="muted" id="combSrcCount"></span></div>
+          <div class="listBody" id="combSrcList"></div>
+        </div>
+        <div class="rowBtns">
+          <button id="combSrcClearBtn" class="btn secondary">Clear</button>
+          <button id="combSrcAllBtn" class="btn secondary">Select All</button>
+        </div>
+
+        <div class="small muted" style="margin-top:6px;">
+          Empty selection in either list can remove all connections depending on AND/OR.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">Flow threshold</div>
+      <input id="threshold" type="range" min="0" max="4000" step="50" value="0"/>
+      <div class="small">Min flow shown: <b><span id="thresholdVal">0</span></b> m³/day</div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">Connected components</div>
+      <div class="opRow" style="margin-top:0;">
+        <label>Color mode</label>
+        <select id="compColorMode">
+          <option value="none" selected>None</option>
+          <option value="all">Color all components</option>
+          <option value="highlight">Highlight selected component(s)</option>
+        </select>
+      </div>
+      <div class="small muted" style="margin-bottom:8px;">
+        Click components to toggle (multi-select).
+      </div>
+      <div id="componentsList"></div>
+    </div>
+
+    <div class="section">
+      <div class="sectionTitle">
+        Connections report
+        <span class="small muted" id="counts"></span>
+      </div>
+      <div id="report" class="report">Loading…</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="./main.js"></script>
+</body>
+</html>
